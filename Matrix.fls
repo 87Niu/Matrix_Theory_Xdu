@@ -1,8 +1,8 @@
-PWD c:/Users/sxn/Desktop/Matrix Theory
+PWD c:/Users/sxn/Desktop/MatrixTheory
 INPUT d:/texlive/2023/texmf.cnf
 INPUT d:/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT d:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/sxn/Desktop/Matrix Theory/Matrix.tex
+INPUT c:/Users/sxn/Desktop/MatrixTheory/Matrix.tex
 OUTPUT Matrix.log
 INPUT d:/texlive/2023/texmf-dist/tex/latex/ctex/ctexart.cls
 INPUT d:/texlive/2023/texmf-dist/tex/latex/ctex/ctexart.cls
