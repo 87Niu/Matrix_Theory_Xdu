@@ -899,7 +899,49 @@ $\det(\lambda I - A) =  0 = (\lambda -2)(\lambda + 1)(\lambda - 1)$
 \textbf{6 ANS}
 \bigskip
 
-(1) $\det(\lambda I - A) =  0 = (\lambda - 1)^4$
+(1)因为反斜对角单位矩阵有特殊的用法。 因此$P = \begin{bmatrix}
+	 & & & 1 \\
+	 & & 1 & \\
+	 & 1 & & \\
+	1 & & &
+\end{bmatrix}$,
+$P^{-1}AP = J = \begin{bmatrix}
+	1 & 1 & & \\
+	& 1 & 1 & \\
+	& & 1 & 1 \\
+	& & & 1 
+\end{bmatrix}$
+
+所以$\ln(A) = P \ln(J) p^{-1} = \begin{bmatrix}
+	0 & 0 & 0 & 0 \\
+	1 & 0 & 0 & 0 \\
+	-\frac{1}{2} & 1 & 0 & 0 \\
+	\frac{1}{3} & -\frac{1}{2} & 1 & 0
+\end{bmatrix}$
+
+
+(2)$A = \begin{bmatrix}
+	J_1 & \\
+	& J_2 
+\end{bmatrix}$
+
+$J_1 = \begin{bmatrix}
+	2 & 1\\
+	0 & 2 
+\end{bmatrix}$,$J_2 = \begin{bmatrix}
+	1 & 1\\
+	0 & 1 
+\end{bmatrix}$
+
+$\ln(A) = \begin{bmatrix}
+	\ln(j_1) & \\
+	& \ln(J_2)
+\end{bmatrix} = \begin{bmatrix}
+	\ln(2) & \frac{1}{2} & 0 & 0 \\
+	0 & \ln(2) & 0 & 0 \\
+	0 & 0 & 0 & 1 \\
+	0 & 0 & 0 & 0
+\end{bmatrix}$
 
 
 
