@@ -102,8 +102,7 @@
 \bigskip
 % \textbf{\large{{REPORT}}} \\
 
-\begin{center}\vspace{-0.1cm}
-\textbf{ \large Homework Of Matrix Theory Per Chapter}\\
+\begin{center}\vspace{-0.1cm}\textbf{ \large Homework Of Matrix Theory Per Chapter}\\
 \end{center}
 
 
@@ -514,7 +513,7 @@ $
 
 
 %%%%%%%%%%%%%%%%%%%%
-\item \textit{HOMEWORK 4 {P106-107} 1(1) (2), 2, 4, 5, 10, 11}%%% 
+\item \textit{HOMEWORK 4 {P106-107} 1 (1)(2), 2, 4, 5, 10, 11}%%% 
 %%%%%%%%%%%%%%%%%%%%
 
 \textbf{1(1)(2) QUE}
@@ -545,27 +544,13 @@ $
 
 
 
-(2)要求$R^n$对于单位向量$e_1 = (1, 0, 0, \dots, 0), e_2 = (0, 1, 0, \dots, 0), \dots, e_n = (0, 0,0, \dots, 0, 1)$的度量矩阵,
-	即求出矩阵$G$,其中$G_{ij} = (e_i, e_j)$
-
-根据内积的定义,有：
-\begin{align*}
-(e_i, e_j) &= e_iAe_j^T \\
-&= (e_i)_1a_{11}(e_j)_1 + (e_i)_1a_{12}(e_j)_2 + \dots + (e_i)_1a_{1n}(e_j)_n \\
-&\quad + (e_i)_2a_{21}(e_j)_1 + (e_i)_2a_{22}(e_j)_2 + \dots + (e_i)_2a_{2n}(e_j)_n \\
-&\quad + \dots \\
-&\quad + (e_i)_na_{n1}(e_j)_1 + (e_i)_na_{n2}(e_j)_2 + \dots + (e_i)_na_{nn}(e_j)_n \\
-&= a_{ii}
-\end{align*}
-
-因此,度量矩阵$G$的元素$G_{ij} = (e_i, e_j)$等于正定矩阵$A$的对角线元素$a_{ii}$。换言之,度量矩阵$G$即为正定矩阵$A$的对角线元素构成的矩阵。
-	
+(2)由$(e_i,e_j) = e_iA{e_j}^t = a_{ij}$知，$r^n$中基$e_1,e_2, \dots, e_n$的度量矩阵为A。
 
 
 \textbf{2 QUE}
 \bigskip
 
-	设$x_1, x_2, \dots, x_n$是湿陷性空间$v^n$的基,向量$x = \xi_1x_1 +\xi_2x_2+\dots+\xi_nx_n, y = \eta_1x_1+ \eta_2x_2+\dots
+	设$x_1, x_2, \dots, x_n$是实线性空间$v^n$的基,向量$x = \xi_1x_1 +\xi_2x_2+\dots+\xi_nx_n, y = \eta_1x_1+ \eta_2x_2+\dots
 	+\xi_nx_n$对应于实数$(x, y) = \sum_{i = 1}^ni\xi_i\eta_i$,试问$V^n$是否是欧式空间。
 
 
@@ -605,15 +590,11 @@ $
 
 \textbf{4 QUE}
 \bigskip
+
 	在$R^4$中,求一单位向量与$(1, 1, -1, 1), (1, -1, -1, 1)$及$(2,1,1,13)$均正交
 
 \textbf{4 ANS}
 \bigskip
-
-
-在 $\mathbb{R}^4$ 中找到一个与向量 $(1, 1, -1, 1)$、$(1, -1, -1, 1)$ 和 $(2, 1, 1, 13)$ 正交的单位向量。
-
-首先，我们需要找到一个与这些向量正交的向量。我们可以通过求解线性方程组来获得这个向量。
 
 设该向量为 $(x, y, z, w)$，我们可以得到以下方程组：
 \[ \begin{aligned}
@@ -637,33 +618,14 @@ $(\frac{4}{\sqrt[]{26}}, 0, \frac{1}{\sqrt[]{26}}, \frac{-3}{\sqrt[]{26}})$。
 设$x_1, x_2, x_3, x_4, x_5$是欧式空间$V^5$的一个标准正交基。$V_1 = L(y_1, y_2, y_3)$,其中$y_1 = x_1 + x_5, y_2 = x_1 - x_2 + x_4, y_3 = 2x_1 + x_2 +x_3$,求
 $V_1$的一个标准正交基
 
-
 \textbf{5 ANS}
 \bigskip
-
 
 
 因为$\alpha_1, \alpha_2,\alpha_3$线性无关，所以$y_1, y_2, y_3$线性无关。
 
 因此,$y_1, y_2, y_3$就是$V_1$的一个基,我们只需要对它们进行单位化即可得到一个标准正交基。
 
-向量$y_1$的长度为：
-
-\[
-\|y_1\| = \sqrt{y_1 \cdot y_1} = \sqrt{(x_1 + x_5) \cdot (x_1 + x_5)}
-\]
-
-向量$y_2$的长度为：
-
-\[
-\|y_2\| = \sqrt{y_2 \cdot y_2} = \sqrt{(x_1 - x_2 + x_4) \cdot (x_1 - x_2 + x_4)}
-\]
-
-向量$y_3$的长度为：
-
-\[
-\|y_3\| = \sqrt{y_3 \cdot y_3} = \sqrt{(2x_1 + x_2 + x_3) \cdot (2x_1 + x_2 + x_3)}
-\]
 
 现在,我们可以计算标准正交基：
 
@@ -672,19 +634,18 @@ u_1 = \frac{y_1}{\|y_1\|}, \quad u_2 = \frac{y_2}{\|y_2\|}, \quad u_3 = \frac{y_
 \]
 
 其中,$u_1, u_2, u_3$是$V_1$的标准正交基。
-请注意,上述计算中使用了向量的点乘和长度的定义。另外,由于给出的是$x_1, x_2, x_3, x_4, x_5$是欧式空间$V^5$的一个标准正交基,我们假设这五个向量是单位向量。
-    
+请注意,上述计算中使用了向量的点乘和长度的定义。
+
 \textbf{10 QUE}
 \bigskip
 
 设$T$是欧式空间$V$中的线性变换,且对$x, y \in V$,有
 \[ (Tx, y) = -(x, Ty)\]
-则称$T$为反对称变换,证明$T$为反对称变换的冲要条件是,T在V的标准正交基下的矩阵$A$为反对称矩阵,即有$A^T = -A$
+则称$T$为反对称变换,证明$T$为反对称变换的充要条件是,T在V的标准正交基下的矩阵$A$为反对称矩阵,即有$A^T = -A$
 
 \textbf{10 ANS}
 \bigskip
 
-我们需要证明两个方向：
 
 证明必要性：
 
@@ -735,14 +696,14 @@ u_1 = \frac{y_1}{\|y_1\|}, \quad u_2 = \frac{y_2}{\|y_2\|}, \quad u_3 = \frac{y_
 \textbf{11 QUE}
 \bigskip
 
-对于下列矩阵A,求正交（酉）矩阵P,使$P^{-1}AP$为对角矩阵：
+对于下列矩阵A,求正交(酉)矩阵P,使$P^{-1}AP$为对角矩阵：
 
 \begin{enumerate}
 	\item A = $\begin{bmatrix}
 		2 & 2 & -2 \\
-	2 & 5 & -4 \\
-	-2 & -4 & 5  
-	\end{bmatrix}$
+		2 & 5 & -4 \\
+		-2 & -4 & 5  
+		\end{bmatrix}$
 	
 	\item A = $\begin{bmatrix}
 		0 & j & 1 \\
@@ -758,73 +719,23 @@ u_1 = \frac{y_1}{\|y_1\|}, \quad u_2 = \frac{y_2}{\|y_2\|}, \quad u_3 = \frac{y_
 \textbf{11 ANS}
 \bigskip
 
-使得$P^{-1}AP$为对角矩阵,我们可以通过特征值分解来解决这个问题。
-
-
 (1) 对于矩阵A = $\begin{bmatrix}
 2 & 2 & -2 \\
 2 & 5 & -4 \\
 -2 & -4 & 5  
-\end{bmatrix}$,我们可以计算其特征值和特征向量。
+\end{bmatrix}$
 
-首先,我们计算特征值。解方程$|A - \lambda I| = 0$,其中$\lambda$为特征值,$I$为单位矩阵。
 
-得到特征值方程$(2-\lambda)((5-\lambda)^2 - 16) + 2(4(5-\lambda)+8) = 0$。
-
-解这个方程,我们可以得到三个特征值：$\lambda_1 = 9$,$\lambda_2 = 3$,$\lambda_3 = 0$。
-
-接下来,我们计算每个特征值对应的特征向量。解方程组$(A-\lambda_i I)X = 0$,其中$X$为特征向量。
-
-对于特征值$\lambda_1 = 9$,解方程组得到特征向量$X_1 = \begin{bmatrix} 1 \\ 2 \\ -2 \end{bmatrix}$。
-
-对于特征值$\lambda_2 = 3$,解方程组得到特征向量$X_2 = \begin{bmatrix} -2 \\ 1 \\ 0 \end{bmatrix}$。
-
-对于特征值$\lambda_3 = 0$,解方程组得到特征向量$X_3 = \begin{bmatrix} 1 \\ -2 \\ 1 \end{bmatrix}$。
-
-接下来,我们将特征向量标准化得到单位特征向量。
-
-单位特征向量$P = \begin{bmatrix} \frac{1}{\sqrt{6}} & -\frac{2}{\sqrt{5}} & \frac{1}{\sqrt{6}} \\ \frac{2}{\sqrt{6}} & \frac{1}{\sqrt{5}} & -\frac{2}{\sqrt{6}} \\ -\frac{2}{\sqrt{6}} & 0 & \frac{1}{\sqrt{6}} \end{bmatrix}$
-
-最后,我们计算$P^{-1}AP$,得到对角矩阵。
-
-$P^{-1}AP = \begin{bmatrix} \frac{1}{\sqrt{6}} & \frac{2}{\sqrt{6}} & -\frac{2}{\sqrt{6}} \\ -\frac{2}{\sqrt{5}} & \frac{1}{\sqrt{5}} & 0 \\ \frac{1}{\sqrt{6}} & -\frac{2}{\sqrt{6}} & \frac{1}{\sqrt{6}} \end{bmatrix}^{-1} \begin{bmatrix} 2 & 2 & -2 \\ 2 & 5 & -4 \\ -2 & -4 & 5 \end{bmatrix} \begin{bmatrix} \frac{1}{\sqrt{6}} & -\frac{2}{\sqrt{5}} & \frac{1}{\sqrt{6}} \\ \frac{2}{\sqrt{6}} & \frac{1}{\sqrt{5}} & -\frac{2}{\sqrt{6}} \\ -\frac{2}{\sqrt{6}} & 0 & \frac{1}{\sqrt{6}} \end{bmatrix} = \begin{bmatrix} 9 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 0 \end{bmatrix}$
-
-因此,对于矩阵A,正交矩阵P为$\begin{bmatrix} \frac{1}{\sqrt{6}} & -\frac{2}{\sqrt{5}} & \frac{1}{\sqrt{6}} \\ \frac{2}{\sqrt{6}} & \frac{1}{\sqrt{5}} & -\frac{2}{\sqrt{6}} \\ -\frac{2}{\sqrt{6}} & 0 & \frac{1}{\sqrt{6}} \end{bmatrix}$,$P^{-1}AP$为对角矩阵$\begin{bmatrix} 9 & 0 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 0 \end{bmatrix}$。
 
 (2) 对于矩阵A = $\begin{bmatrix}
 0 & j & 1 \\
 -j & 0 & 0 \\
 1 & 0 & 0
-\end{bmatrix}$,我们同样可以按照上述步骤进行求解。
+\end{bmatrix}$
 
-首先,计算特征值。解方程$|A - \lambda I| = 0$,得到特征值方程$\lambda^3 + 1 = 0$。
-
-解这个方程,我们得到三个特征值：$\lambda_1 = -1$,$\lambda_2 = \frac{1}{2} + \frac{\sqrt{3}}{2}j$,$\lambda_3 = \frac{1}{2} - \frac{\sqrt{3}}{2}j$。
-
-接下来,计算每个特征值对应的特征向量。解方程组$(A-\lambda_i I)X = 0$,得到特征向量。
-
-对于特征值$\lambda_1 = -1$,解方程组得到特征向量$X_1 = \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}$。
-
-对于特
-
-征值$\lambda_2 = \frac{1}{2} + \frac{\sqrt{3}}{2}j$,解方程组得到特征向量$X_2 = \begin{bmatrix} -\frac{1}{2} + \frac{\sqrt{3}}{2}j \\ 1 \\ \frac{1}{2} + \frac{\sqrt{3}}{2}j \end{bmatrix}$。
-
-对于特征值$\lambda_3 = \frac{1}{2} - \frac{\sqrt{3}}{2}j$,解方程组得到特征向量$X_3 = \begin{bmatrix} -\frac{1}{2} - \frac{\sqrt{3}}{2}j \\ 1 \\ \frac{1}{2} - \frac{\sqrt{3}}{2}j \end{bmatrix}$。
-
-标准化特征向量得到单位特征向量。
-
-单位特征向量$P = \begin{bmatrix} \frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{2}} \\ 0 & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} \end{bmatrix}$
-
-计算$P^{-1}AP$得到对角矩阵。
-
-$P^{-1}AP = \begin{bmatrix} \frac{1}{\sqrt{3}} & 0 & -\frac{1}{\sqrt{3}} \\ -\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{6}} \\ -\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}^{-1} \begin{bmatrix} 0 & j & 1 \\ -j & 0 & 0 \\ 1 & 0 & 0 \end{bmatrix} \begin{bmatrix} \frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{2}} \\ 0 & \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} \end{bmatrix} = \begin{bmatrix} -1 & 0 & 0 \\ 0 & \frac{1}{2} + \frac{\sqrt{3}}{2}j & 0 \\ 0 & 0 & \frac{1}{2} - \frac{\sqrt{3}}{2}j \end{bmatrix}$
-
-因此,对于矩阵A,正交矩阵P为$\begin{bmatrix} \frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{2}} \\ 0 & \frac{1}{\sqrt{2
-
-}} & -\frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{2}} \end{bmatrix}$,$P^{-1}AP$为对角矩阵$\begin{bmatrix} -1 & 0 & 0 \\ 0 & \frac{1}{2} + \frac{\sqrt{3}}{2}j & 0 \\ 0 & 0 & \frac{1}{2} - \frac{\sqrt{3}}{2}j \end{bmatrix}$.
 
 %%%%%%%%%%%%%%%%%%%%
-\item \textit{HOMEWORK 5 {P79 19(1)(3) P106 1(1)(2), 2, 4, 5, 10}}%%% 
+\item \textit{HOMEWORK 5 {P79 19(1)(3)}}%%% 
 %%%%%%%%%%%%%%%%%%%%
 
 
@@ -850,72 +761,147 @@ $P^{-1}AP = \begin{bmatrix} \frac{1}{\sqrt{3}} & 0 & -\frac{1}{\sqrt{3}} \\ -\fr
 \bigskip
 
 
-(1)  $det(\lambda I - A) = (\lambda - 1)(\lambda - 2)(\lambda + 1)$, A有三个不同的特征值，从而A的Jordan标准型
+(1)$det(\lambda I - A) = (\lambda - 1)(\lambda - 2)(\lambda + 1)$, A有三个不同的特征值，从而A的Jordan标准型
 为$\begin{bmatrix}
 	1 &  &  \\
  & 2 &  \\
  &  & -1  
 \end{bmatrix}$
 
-(3)  $det(\lambda I - A) = (\lambda - i)(\lambda + i)(\lambda - 1)$, A有三个不同的特征值，从而A的Jordan标准型
-为$\begin{bmatrix}
-	1 &  &  \\
- & i &  \\
- &  & -i  
+(3)$det(\lambda I - A) = (\lambda - 1)^4$,由此可知$D_4(\lambda) = (\lambda)^4$,同时可知 $D_1(\lambda) = 1$
+
+容易求得$D_2(\lambda) = 1$,位于$\lambda - A$的第2, 3, 4行与第1, 2, 4列处的三阶子式 $ = 7 \lambda^2 - 4 \lambda + 17$
+他和$D_4(\lambda)$互质，所以$D_3(\lambda) = 1$,于是$A$的Jordan标准型为
+
+\[ j = \begin{bmatrix}
+	1 & 1 & 0 & 0 \\
+	0 & 1 & 1 & 0 \\
+	0 & 0 & 1 & 1 \\
+	0 & 0 & 0 & 1 \\
+\end{bmatrix}\]
+
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 6 {P163 3, 4, 5, 6}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+\textbf{3 QUE}
+\bigskip
+
+若A为是实反对称矩阵$(A^T = -A)$， 则$e^A$为正交矩阵。
+
+\textbf{3 ANS}
+\bigskip
+
+若证明为正交矩阵，只需证明$e^A {e^A}^T = I$.
+
+$e^A({e^A}^T) = e^A {e^A}^T = e^{A - A} = I$  
+
+所以$e^A$为正交矩阵。
+
+\textbf{4 QUE}
+\bigskip
+
+若A是Hermite矩阵,则$e^{iA}$是酉矩阵。
+
+\textbf{4 ANS}
+\bigskip
+
+若证明为正交酉矩阵，只需证明$e^{iA} {e^{iA}}^T = I$.
+
+$e^{iA} {e^{iA}}^T = e^{iA} {e^{-iA}} = e^{O} = I$  
+
+所以$e^{iA}$为正交酉矩阵。
+
+\textbf{5 QUE}
+\bigskip
+
+设  $A = \begin{bmatrix}
+	2 & 1 & 0 \\
+	0 & 0 & 1 \\
+	0 & 1 & 0
+\end{bmatrix}$,求$e^A, e^{tA}(t \in R), \sin A$
+
+\textbf{5 ANS}
+\bigskip
+
+$\det(\lambda I - A) =  0 = (\lambda -2)(\lambda + 1)(\lambda - 1)$
+
+得到特征值为2 对应的特征向量为$(1, 0 ,0)$
+
+得到特征值为1 对应的特征向量为$(-1, 1 ,1)$
+
+得到特征值为-1 对应的特征向量为$(1, -3 ,3)$
+
+即存在可逆矩阵$P = \begin{bmatrix}
+	1 & -1 & 1 \\
+	0 & 1 & -3 \\
+	0 & 1 & 3
+\end{bmatrix}$
+使得$P^{-1}AP = \begin{bmatrix}
+	2 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & -1 
 \end{bmatrix}$
 
 
+同时$P^{-1} = \frac{1}{6} \begin{bmatrix}
+	6 & 4 & 2 \\
+	0 & 3 & 3 \\
+	0 & -1 & 1
+\end{bmatrix}$
 
-\textbf{106(1)(2) QUE}
+
+因此，根据以上的分析：
+
+(1)$e^A = Pdiag(e^2, e, e^{-1})P^{-1} = $
+
+\[ \frac{1}{6}  \begin{bmatrix}
+	6e^2 & 4e^2 - 3e + e^{-1} & 2e^2 - 3e +e^{-1} \\
+	0 & 3e +3e^{-1} & 3e -3e^{-1} \\
+	0 & 3e -3e^{-1} & 3e + 3e^{-1} 
+\end{bmatrix}\]
+
+(2)$e^{tA} = Pdiag(e^{2t}, e^t, e^{-t})P^{-1} = $
+
+\[ \frac{1}{6}  \begin{bmatrix}
+	6e^{2t} & 4e^{2t}-3e^t-e^{-t} & 2e^{2t} -3e^t + t^-t \\
+	0 & 3e^t +3e^{-t} & 3e^t -3e^{-t} \\
+	0 & -e^t + 3e^{-t} & 3e^t + 3e^{-t}
+\end{bmatrix}\]
+
+(3)$e^A = Pdiag(\sin(2), \sin(1), \sin(-1))P^{-1} = $
+
+\[ \frac{1}{6}  \begin{bmatrix}
+	6sin2 & 4sin2 -3sin1 -sin(-1) & 2sin2 -3sin1 + sin(-1) \\
+	0 & 3sin1 + 3sin(-1) & 3sin1 -3sin(-1) \\
+	0 & 3sin1 - 3sin(-1) & 3sin1 + 3sin(-1)
+\end{bmatrix}\]
+
+\textbf{6 QUE}
 \bigskip
 
+设$f(z) = \ln(z)$, 求$f(A)$,这里A为
 
+(1) $\begin{bmatrix}
+	1 & 0 & 0 & 0 \\
+	1 & 1 & 0 & 0 \\
+	0 & 1 & 1 & 0 \\
+	0 & 0 & 1 & 1
+\end{bmatrix}$
+\qquad \qquad (2)$\begin{bmatrix}
+	2 & 1 & 0 & 0 \\
+	0 & 2 & 0 & 0 \\
+	0 & 0 & 1 & 1 \\
+	0 & 0 & 0 & 1
+\end{bmatrix}$
 
-\textbf{2 ANS}
+\textbf{6 ANS}
 \bigskip
 
-
-\textbf{11 QUE}
-\bigskip
-
-\textbf{11 ANS}
-\bigskip
+(1) $\det(\lambda I - A) =  0 = (\lambda - 1)^4$
 
 
-\textbf{11 QUE}
-\bigskip
-
-\textbf{11 ANS}
-\bigskip
-
-
-\textbf{11 QUE}
-\bigskip
-
-\textbf{11 ANS}
-\bigskip
-
-
-\textbf{11 QUE}
-\bigskip
-
-\textbf{11 ANS}
-\bigskip
-
-\textbf{11 QUE}
-\bigskip
-
-\textbf{11 ANS}
-\bigskip
-
-
-%%%%%%%%%%%%%%%%%%%%
-\item \textit{HOMEWORK 6 {P107 11}}%%% 
-%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%
-\item \textit{HOMEWORK 7 {P163 3, 4, 5, 6}}%%% 
-%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%
 \item \textit{HOMEWORK 8 {P170-171 5, 9 P177 3, 4}}%%% 
