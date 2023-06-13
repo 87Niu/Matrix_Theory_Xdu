@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1686661322 "c:/Users/sxn/Desktop/MatrixTheory/Matrix.tex" "Matrix.pdf" "Matrix" 1686661323 0
-  "Matrix.aux" 1686661323 33 f5162ef287409618820a40adc8e2d2a1 "pdflatex"
-  "Matrix.tex" 1686661321 27861 057bc5c6f7fb078813d339304fdea428 ""
-  "c:/Users/sxn/Desktop/MatrixTheory/Matrix.tex" 1686661321 27861 057bc5c6f7fb078813d339304fdea428 ""
+["pdflatex"] 1686663567 "c:/Users/sxn/Desktop/MatrixTheory/Matrix.tex" "Matrix.pdf" "Matrix" 1686663568 0
+  "Matrix.aux" 1686663567 33 dca2c25acf2dd0fcc68a5b8e6d3e57b9 "pdflatex"
+  "Matrix.tex" 1686663566 29663 e9ee92c3b4f1208b669f8d4516134cd8 ""
+  "c:/Users/sxn/Desktop/MatrixTheory/Matrix.tex" 1686663566 29663 e9ee92c3b4f1208b669f8d4516134cd8 ""
   "c:/Windows/Fonts/msyh.ttc" 1651900759 19647736 ff2e53a6131130a07589812ea5b5b0d0 ""
   "c:/Windows/Fonts/simsun.ttc" 1651900759 17909384 a31f28cad247ad739adf0891b0f2f7f2 ""
   "d:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1684663633 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -43,6 +43,7 @@
   "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong54.tfm" 1684664634 1172 c93f9362e45903cde8748b054b30ab56 ""
   "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong56.tfm" 1684664634 1172 483bbebc510ee17933c3af062965b6d4 ""
   "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong57.tfm" 1684664634 1172 eb821bcbfd385c0d470afef6ff6ac95b ""
+  "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong58.tfm" 1684664634 1172 9097e54d4337c7af2506271a2618d1d8 ""
   "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong59.tfm" 1684664634 1172 2aa8dc9bdcfa6684a19d81e71fa8a3e1 ""
   "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong5b.tfm" 1684664634 1172 449ef25f4dcd447addb8325f7bf12b2a ""
   "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong5c.tfm" 1684664634 1172 bbe7d94072c5d308e673fac2512329ac ""
@@ -59,6 +60,7 @@
   "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong68.tfm" 1684664634 1172 e36ee82e53889b69220fe0f54fd031bb ""
   "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong6b.tfm" 1684664634 1172 eec47476c8168dac40c6b0d39a32faa4 ""
   "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong6c.tfm" 1684664634 1172 da6dd37ba8d24cc1a36aa510c8ac56f9 ""
+  "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong6d.tfm" 1684664634 1172 3942109a9ca7a08ec5324d8eec4093d9 ""
   "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong6e.tfm" 1684664634 1172 42ca517602ab12cb60a5174be463b80a ""
   "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong70.tfm" 1684664634 1172 65f78ffa41ce8b45f91f362b219db0e7 ""
   "d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong71.tfm" 1684664634 1172 ac9bcd3bdbf45728188f855f6ba1cf2f ""
@@ -99,6 +101,7 @@
   "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb" 1684663223 36554 b67dc2cfa451409e100b3fcf5f506509 ""
   "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1684663223 30251 6afa5cb1d0204815a708a080681d4674 ""
   "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1684663223 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1684663223 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
   "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1684663223 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1684663223 35752 024fb6c41858982481f6968b5fc26508 ""
   "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1684663223 32734 69e00a6b65cedb993666e42eedb3d48f ""

@@ -840,7 +840,11 @@ INPUT d:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm10.tfm
 INPUT d:/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/euler/eusm7.tfm
 INPUT d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong72.tfm
 INPUT d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong82.tfm
+INPUT d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong6d.tfm
+INPUT d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong58.tfm
 INPUT Matrix.aux
+INPUT c:/Windows/Fonts/simsun.ttc
+INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
@@ -907,6 +911,7 @@ INPUT d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
 INPUT d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
