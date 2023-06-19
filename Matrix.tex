@@ -2,7 +2,7 @@
 \textwidth 6.5in
 \textheight 9.in
 \oddsidemargin 0in
-\headheight 0in
+\headheight 1in
 \usepackage{graphicx}
 \usepackage{fancybox}
 \usepackage[utf8]{inputenc} %solucion del problema de los acentos.
@@ -29,7 +29,10 @@
 \usepackage{listings}
 \usepackage{xcolor}
 
-
+\usepackage{draftwatermark}
+\SetWatermarkText{22031212122-XDU舒晓宁} % the Text
+\SetWatermarkLightness{0.9} % the lightness from 0 to 1, default 0.8
+\SetWatermarkScale{0.4} % the scale, default 1.2
 
 % 导入包
 \usepackage{hyperref}
@@ -560,7 +563,7 @@ $
 
 
 
-(2)由$(e_i,e_j) = e_iA{e_j}^t = a_{ij}$知，$r^n$中基$e_1,e_2, \dots, e_n$的度量矩阵为A。
+(2)由$(e_i,e_j) = e_iA{e_j}^T = a_{ij}$知，$r^n$中基$e_1,e_2, \dots, e_n$的度量矩阵为A。
 
 
 \textbf{2 QUE}
@@ -640,7 +643,7 @@ $V_1$的一个标准正交基
 
 因为$\alpha_1, \alpha_2,\alpha_3$线性无关，所以$y_1, y_2, y_3$线性无关。
 
-因此,$y_1, y_2, y_3$就是$V_1$的一个基,我们只需要对它们进行单位化即可得到一个标准正交基。
+因此,$y_1, y_2, y_3$就是$V_1$的一个基,只需要对它们进行单位化即可得到一个标准正交基。
 
 
 现在,我们可以计算标准正交基：
@@ -650,7 +653,6 @@ u_1 = \frac{y_1}{\|y_1\|}, \quad u_2 = \frac{y_2}{\|y_2\|}, \quad u_3 = \frac{y_
 \]
 
 其中,$u_1, u_2, u_3$是$V_1$的标准正交基。
-请注意,上述计算中使用了向量的点乘和长度的定义。
 
 \textbf{10 QUE}
 \bigskip
@@ -741,12 +743,49 @@ u_1 = \frac{y_1}{\|y_1\|}, \quad u_2 = \frac{y_2}{\|y_2\|}, \quad u_3 = \frac{y_
 -2 & -4 & 5  
 \end{bmatrix}$
 
+$\det(\lambda I - A) = 0 = (\lambda - 1)^2(\lambda -10)$
 
+当$\lambda = 1$(二重)时，对应的特征向量为$(2, 0, 1),(-2, 1, 0)$,将其进行正交单位化得到
+
+$x_1 = (\frac{-2}{\sqrt[]{5}}, \frac{1}{\sqrt[]{5}}, 0),x_2 = (\frac{2}{3\sqrt[]{5}}, \frac{4}{3\sqrt[]{5}}, \frac{5}{3\sqrt[]{5}})$
+
+当$\lambda = 10$时，对应的特征向量为$(-1,-2,2)$,将其单位化化得到
+
+$x_3 = (\frac{-1}{3}, \frac{-2}{3}, \frac{2}{3})$
+
+令$P = (x_1, x_2, x_3)$ 可得 $P^{-1}AP = \begin{bmatrix}
+	1 & & \\
+	& 1 & \\
+	& & 10 
+\end{bmatrix}$
+
+\bigskip
 
 (2) 对于矩阵A = $\begin{bmatrix}
 0 & j & 1 \\
 -j & 0 & 0 \\
 1 & 0 & 0
+\end{bmatrix}$
+
+$\det(\lambda I - A) = 0 = \lambda(\lambda^2 - 2) = \lambda(\lambda - \sqrt[]{2})(\lambda + \sqrt[]{2})$
+
+当$\lambda = 0$时，对应的特征向量为$(0, j, 1)$,将其进行正交单位化得到
+
+$x_1 = (0, \frac{j}{\sqrt[]{2}}, \frac{1}{\sqrt[]{2}})$
+
+当$\lambda = \sqrt[]{2}$时，对应的特征向量为$(\sqrt[]{2}, -j, 1)$,将其进行正交单位化得到
+
+$x_2 = (\frac{1}{\sqrt[]{2}}, \frac{-j}{2}, \frac{1}{2})$
+
+当$\lambda = - \sqrt[]{2}$时，对应的特征向量为$(-\sqrt[]{2}, -j, 1)$,将其进行正交单位化得到
+
+$x_3 = (-\frac{1}{\sqrt[]{2}}, -\frac{j}{2}, \frac{1}{2})$
+
+
+令$P = (x_1, x_2, x_3)$ 可得 $P^{-1}AP = \begin{bmatrix}
+	0 & & \\
+	& \sqrt[]{2} & \\
+	& & -\sqrt[]{2} 
 \end{bmatrix}$
 
 
