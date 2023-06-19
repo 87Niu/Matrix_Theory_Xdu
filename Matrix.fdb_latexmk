@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1687173955 "c:/Users/sxn/Desktop/MatrixTheory/Matrix.tex" "Matrix.pdf" "Matrix" 1687173957 0
-  "Matrix.aux" 1687173956 555 455dcd559a1d776e10b4006870f00ed6 "pdflatex"
-  "Matrix.out" 1687173956 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Matrix.tex" 1687173955 31469 d34284d8ec812d17c225f7c68d667683 ""
-  "c:/Users/sxn/Desktop/MatrixTheory/Matrix.tex" 1687173955 31469 d34284d8ec812d17c225f7c68d667683 ""
+["pdflatex"] 1687178024 "c:/Users/sxn/Desktop/MatrixTheory/Matrix.tex" "Matrix.pdf" "Matrix" 1687178025 0
+  "Matrix.aux" 1687178025 555 bee56c7debb7d363a3cca45bc56a44bd "pdflatex"
+  "Matrix.out" 1687178025 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Matrix.tex" 1687178024 34093 1219319dd405465298353438c5518994 ""
+  "c:/Users/sxn/Desktop/MatrixTheory/Matrix.tex" 1687178024 34093 1219319dd405465298353438c5518994 ""
   "c:/Windows/Fonts/msyh.ttc" 1651900759 19647736 ff2e53a6131130a07589812ea5b5b0d0 ""
   "c:/Windows/Fonts/simsun.ttc" 1651900759 17909384 a31f28cad247ad739adf0891b0f2f7f2 ""
   "d:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1684663633 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -110,6 +110,7 @@
   "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1684663223 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1684663223 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1684663223 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1684663223 32587 65067f817f408bc71a7312f3d9828a9b ""
   "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1684663223 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb" 1684663223 37944 359e864bd06cde3b1cf57bb20757fb06 ""
   "d:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb" 1684663223 10538 4c913b4f5af64465058317e624ed5562 ""

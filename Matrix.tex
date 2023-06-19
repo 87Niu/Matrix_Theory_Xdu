@@ -816,7 +816,7 @@ $x_3 = (-\frac{1}{\sqrt[]{2}}, -\frac{j}{2}, \frac{1}{2})$
 \bigskip
 
 
-(1)$det(\lambda I - A) = (\lambda - 1)(\lambda - 2)(\lambda + 1)$, A有三个不同的特征值，从而A的Jordan标准型
+(1)$\det(\lambda I - A) = (\lambda - 1)(\lambda - 2)(\lambda + 1)$, A有三个不同的特征值，从而A的Jordan标准型
 为$\begin{bmatrix}
 	1 &  &  \\
  & 2 &  \\
@@ -1007,27 +1007,91 @@ $\ln(A) = \begin{bmatrix}
 \textbf{5 QUE}
 \bigskip
 
+若 $A = A(t) = (a_{ij}(t))_{n \times n}$非奇异,证明 \[
+	\frac{d}{dt}A^{-1} = -A^{-1}\frac{dA}{dt}A^{-1}
+\]
 
 \textbf{5 ANS}
 \bigskip
 
+$AA^{-1} = I$,两边对t进行求导可得
+
+$\frac{dA}{dt}A^{-1} + \frac{A^{-1}}{dt} = 0$ 
+
+整理可得后两边的左侧同时乘以$A^{-1}$, 可得$-A^{-1}\frac{dA}{dt}A^{-1}A^{-1} = \frac{dA^{-1}}{dt}$ 
+
+
 \textbf{9 QUE}
 \bigskip
+
+举例说明关系式 \[ \frac{d}{dt}(A(t))^m = m(A(t))^{m - 1}\frac{d}{dt}A(t)\]
+
+一般不成立，此处$A(t) = (a_{ij}(t))_{n \times n}$,又在什么条件下，他才能能够成立。
+
+
 
 \textbf{9 ANS}
 \bigskip
 
-\textbf{3 ANS}
+关系式 \(\frac{d}{dt}(A(t))^m = m(A(t))^{m - 1}\frac{d}{dt}A(t)\) 在一般情况下并不成立。然而，在特定条件下，它可以成立。
+
+条件：\(A(t) = (a_{ij}(t))_{n \times n}\) 的矩阵 \(A(t)\) 必须满足以下条件：
+
+1. \(A(t)\) 是一个可微的矩阵函数，即所有 \(a_{ij}(t)\) 都是关于 \(t\) 的可微函数。
+
+2. \(A(t)\) 是一个可幂乘的矩阵函数，即对于任意实数 \(m\)，\(A(t)\) 的幂 \(A(t)^m\) 是定义良好的。
+
+在满足上述条件的前提下，关系式 \(\frac{d}{dt}(A(t))^m = m(A(t))^{m - 1}\frac{d}{dt}A(t)\) 成立。
+
+这个关系式是矩阵求导法则的一种推广形式，类似于实数函数的幂函数求导法则。它表明，当矩阵 \(A(t)\) 可微且可幂乘时，对 \(A(t)\) 进行幂运算后再求导，等价于先对 \(A(t)\) 求导，然后再进行幂运算，并乘以幂指数 \(m\)。
+
+\textbf{3 QUE}
 \bigskip
+
+求微分方程组
+
+\[
+\begin{cases}
+\frac{d\xi_1}{dt} = -2\xi_1+\xi_2 + 1 \\
+\frac{d\xi_2}{dt} = -4\xi_1+2\xi_2 + 2 \\
+\frac{d\xi_3}{dt} = \xi_1+\xi_3 + e^t - 1 
+\end{cases} \]满足初始条件$\xi_1(0) = 1, \xi_2(0) = 1, \xi_3(0) = -1$的解。
 
 \textbf{3 ANS}
 \bigskip
 
-\textbf{4 ANS}
+令 $x = (\xi_1, \xi_2, \xi_3), A = \begin{bmatrix}
+	-2 & 1 & 0 \\
+	-4 & 2 & 0 \\
+	1 & 0 &  1
+\end{bmatrix}, b = (1, 2, e^t -1), x(0) = (1,1,-1)$ 
+
+$\det(\lambda I - x) = 0 = \lambda^2(\lambda - 1)$ 可知 $A^3 = A^2$
+
+
+\[x(t) = e^{At} \{ \begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} + \begin{bmatrix} t \\ 2t \\ 0 \end{bmatrix} \}  = \begin{bmatrix}
+	1 \\ 1 \\ (t - 1)e^t
+\end{bmatrix}\]
+
+
+\textbf{4 QUE}
 \bigskip
+
+设 $A = (a_{ij})_{n \times n}$为常数矩阵，$X = (\xi_{ij}(t))_{n \times n}$,a 为常数，试证明下面的Cauchy微分方程组
+\[ \frac{dX}{dt} = \frac{A}{t - a}X\]可简化为
+
+\[\frac{dX}{du} = AX\],其中， $u = \ln(t - a)$ .并进而证明其通解为 $X = (t - a)^AC$,其中，C为n阶常数矩阵。
+
 
 \textbf{4 ANS}
 \bigskip
+
+由题意可得$t = e^u + a$即原式可化简为
+
+$\frac{dX}{du} = \frac{dx}{dt}\frac{dt}{du} = AX$
+
+通解为 $X(t) = e^{Au}C = e^{\ln(t - a)}C = (t - a)^A C$其中，C为n阶常数矩阵。
+
 
 %%%%%%%%%%%%%%%%%%%%
 \item \textit{HOMEWORK 9 {P195 2, 3}}%%% 
