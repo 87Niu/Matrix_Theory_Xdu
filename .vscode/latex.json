@@ -4,6 +4,7 @@
     "latex-workshop.intellisense.package.enabled": true,
     "latex-workshop.message.error.show": false,
     "latex-workshop.message.warning.show": false,
+    "latex-workshop.message.warning.show": false,
     "latex-workshop.latex.tools": [
         {
             "name": "xelatex",
