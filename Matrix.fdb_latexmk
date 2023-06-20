@@ -1,9 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1687226494 "c:/Users/sxn/Desktop/MatrixTheory/Matrix.tex" "Matrix.pdf" "Matrix" 1687226495 0
-  "Matrix.aux" 1687226495 555 bee56c7debb7d363a3cca45bc56a44bd "pdflatex"
-  "Matrix.out" 1687226495 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "Matrix.tex" 1687226492 34093 1219319dd405465298353438c5518994 ""
-  "c:/Users/sxn/Desktop/MatrixTheory/Matrix.tex" 1687226492 34093 1219319dd405465298353438c5518994 ""
+["pdflatex"] 1687226562 "c:/Users/sxn/Desktop/MatrixTheory/Matrix.tex" "Matrix.pdf" "Matrix" 1687226563 0
+  "Matrix.aux" 1687226563 555 9e18ab92fe42685114dc652e281ac796 "pdflatex"
+  "Matrix.out" 1687226563 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "Matrix.tex" 1687226560 34270 0ffcc9a4fd538608f8beee6e11d8b211 ""
+  "c:/Users/sxn/Desktop/MatrixTheory/Matrix.tex" 1687226560 34270 0ffcc9a4fd538608f8beee6e11d8b211 ""
   "c:/Windows/Fonts/msyh.ttc" 1651900759 19647736 ff2e53a6131130a07589812ea5b5b0d0 ""
   "c:/Windows/Fonts/simsun.ttc" 1651900759 17909384 a31f28cad247ad739adf0891b0f2f7f2 ""
   "d:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1684663633 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -181,6 +181,7 @@
   "d:/texlive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty" 1684663223 88393 1adf6fa3f245270d06e3d4f8910f7fc5 ""
   "d:/texlive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty" 1684663223 4474 f04cd1cc7bd76eb033e6fb12eb6a0d77 ""
   "d:/texlive/2023/texmf-dist/tex/latex/amsmath/amstext.sty" 1684663223 2444 70065bddd85997dc1fd0bb7ae634e5fa ""
+  "d:/texlive/2023/texmf-dist/tex/latex/arydshln/arydshln.sty" 1684663241 46329 ffecd4a08bc2c823f27a610f95aa12d3 ""
   "d:/texlive/2023/texmf-dist/tex/latex/atveryend/atveryend.sty" 1684663251 19336 ce7ae9438967282886b3b036cfad1e4d ""
   "d:/texlive/2023/texmf-dist/tex/latex/auxhook/auxhook.sty" 1684663257 3935 57aa3c3e203a5c2effb4d2bd2efbc323 ""
   "d:/texlive/2023/texmf-dist/tex/latex/base/article.cls" 1684663820 20144 d5ecf0a5140c8d8d8b72cbe86e320eff ""
