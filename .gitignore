@@ -4,3 +4,5 @@ Matrix.fdb_latexmk
 Matrix.aux
 Matrix.log
 Matrix.out
+pdflatex2600.fls
+.gitignore
