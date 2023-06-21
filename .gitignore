@@ -6,3 +6,4 @@ Matrix.log
 Matrix.out
 pdflatex2600.fls
 .gitignore
+Matrix.synctex(busy)
