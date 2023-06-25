@@ -4,3 +4,4 @@ Matrix.fdb_latexmk
 Matrix.aux
 .gitignore
 Matrix.synctex(busy)
+Matrix.fls
