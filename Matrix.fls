@@ -1184,9 +1184,11 @@ INPUT d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong6d.tfm
 INPUT d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong58.tfm
 INPUT d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong83.tfm
 INPUT d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong8c.tfm
+INPUT d:/texlive/2023/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong55.tfm
 INPUT Matrix.aux
 INPUT ./Matrix.out
 INPUT ./Matrix.out
+INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
