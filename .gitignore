@@ -2,9 +2,5 @@ Matrix.tex
 Matrix.synctex.gz
 Matrix.fdb_latexmk
 Matrix.aux
-Matrix.log
-Matrix.out
-pdflatex2600.fls
 .gitignore
 Matrix.synctex(busy)
-pdflatex22456.fls
