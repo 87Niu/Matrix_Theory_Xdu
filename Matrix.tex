@@ -1,0 +1,2075 @@
+\documentclass[11pt,letterpaper]{ctexart}
+\textwidth 6.5in
+\textheight 9.in
+\oddsidemargin 0in
+\headheight 1in
+\usepackage{graphicx}
+\usepackage{fancybox}
+\usepackage[utf8]{inputenc} %solucion del problema de los acentos.
+\usepackage{epsfig,graphicx}
+\usepackage{multicol,pst-plot}
+\usepackage{pstricks}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage{xcolor}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\pagestyle{empty}
+\DeclareMathOperator{\tr}{Tr}
+\newcommand*{\op}[1]{\check{\mathbf#1}}
+\newcommand{\bra}[1]{\langle#1 |}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\braket}[2]{\langle#1 | #2 \rangle}
+\newcommand{\mean}[1]{\langle#1 \rangle}
+\newcommand{\opvec}[1]{\check{\vec#1}}
+\renewcommand{\sp}[1]{{\begin{split}#1 \end{split}}}
+
+
+
+
+\usepackage{arydshln}
+
+
+\usepackage{lipsum}
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+% \usepackage{draftwatermark}
+% \SetWatermarkText{22031212122-XDU舒晓宁} % the Text
+% \SetWatermarkLightness{0.4} % the lightness from 0 to 1, default 0.8
+% \SetWatermarkScale{0.3} % the scale, default 1.2
+% \SetWatermarkColor{}
+
+\usepackage{tikz} %加水印用
+\usepackage{eso-pic}
+\newcommand\BackgroundPicture{%
+  \put(0,0){%
+    \parbox[b][\paperheight]{\paperwidth}{%
+      \vfill
+      \centering%
+\begin{tikzpicture}[remember picture,overlay]
+\node [rotate=50,scale=4,text opacity=0.5, color=pink] at (current page.center) {22031212122-XDU舒晓宁}; %中括号内是旋转角度，字体大小
+\end{tikzpicture}%
+      \vfill
+    }}}
+
+
+% 导入包
+\usepackage{hyperref}
+% 格式设置
+\hypersetup{
+    colorlinks=true,
+    linkcolor=pink,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{backcolourcode}{rgb}{255,255,255}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+
+\lstdefinestyle{C++}{
+	backgroundcolor=\color{backcolourcode},
+    language        =   C++, 
+	tabsize         =   4,
+	commentstyle    =   \rmfamily\itshape,  % 注释的风格,斜体
+    basicstyle      =   \zihao{-5}\ttfamily,
+    numberstyle     =   \zihao{-5}\ttfamily,
+    keywordstyle    =   [2] \color{pink},
+    stringstyle     =   \color{magenta},
+    commentstyle    =   \color{pink}\ttfamily,
+    columns         =   fixed,  % 如果不加这一句,字间距就不固定,很丑,必须加
+    basewidth       =   0.5em,
+	frame           =   lrtb,   % 显示边框
+	flexiblecolumns,                % 别问为什么,加上这个
+	showspaces      =   false,  % 是否显示空格,显示了有点乱,所以不现实了
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+\pagestyle{plain}
+\begin{flushleft}
+
+\AddToShipoutPicture{\BackgroundPicture}	
+
+%%%%%%      你可以在这里修改你的个人信息与教师信息       %%%%%%%%%
+\textbf{ID 22031212122} \\
+\textbf{NAME Xiaoning Shu}\\
+\textbf{TEAC Qiulin Huang}\\
+\textbf{DATE 20230625}\\
+
+\end{flushleft}
+
+\begin{flushright}\vspace{-35mm}
+\includegraphics[height=4.0cm]{logo.png}
+\end{flushright}
+ 
+\begin{center}\vspace{-0.1cm}
+\textbf{ \large \textit{Matrix Theory}}\\
+\end{center}
+
+ 
+\rule{\linewidth}{0.6mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bigskip
+% \textbf{\large{{REPORT}}} \\
+
+\begin{center}\vspace{-0.1cm}\textbf{ \large Homework Of Matrix Theory Per Chapter}\\
+\end{center}
+
+\raggedleft{\href{https://github.com/shuxiaoningAK/Matrix\_Theory\_Xdu\_Homework}{此项目已开源,请点击前往github首页}}
+
+\bigskip
+% \textbf{\large{Problems}}
+
+\begin{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%
+ \item \textit{HOMEWORK 1  {P25-26  3, 5, 7, 9}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+\textbf{3 QUE}
+\bigskip
+
+	判别下列集合对所指运算是否构成{R}上的线性空间:
+
+	(1) 次数等于$m(m \geqslant 1)$的实系数多项式的集合,对于多项式的加法和数与多项式的乘法;
+
+	(2) 实对称矩阵的集合,对于矩阵的加法和实数与矩阵的乘法;
+
+	(3) 平面上全体向量的集合,对于通常的加法和如下定义的数乘运算 $k \circ x = \vec{0}$.
+
+\textbf{3 ANS}
+\bigskip
+
+	(1) 不构成,在加法和在乘法上,两个系数相加或相乘可能会超过$m$,因此不封闭.
+	
+	(2) 构成,因为实矩阵的加法与乘法都是在相应的加法和乘法结果内,实矩阵相加仍然是实矩阵,实矩阵相乘仍然是实矩阵,构成封闭性。
+
+	(3) 不构成,对于八大法则来说,当$x \neq 0$时, $1 \circ x = 0$时就不满足了。
+	
+\textbf{5 QUE}
+\bigskip
+	
+求习题3(2)中线性空间的维数与基.
+
+\textbf{5 ANS}
+\bigskip
+
+假设$\mathbf{A}$的维度为$n\times n$,则实对称矩阵有对角线上的元素和下三角（或上三角）
+的元素共计$\frac{n(n+1)}{2}$个,由于对角线上的元素对称,只需考虑下三角（或上三角）的元素。
+因此,实对称矩阵的维度为$\frac{n(n+1)}{2}$。
+基的选取可以考虑将下三角(或上三角)的某个元素置为1,其余元素为0
+
+
+\textbf{7 QUE}
+\bigskip
+
+求向量$P_2$中向量$1 + t + t^2$对基: $1, t - 1, (t - 2)(t - 1)$的坐标.
+
+\textbf{7 ANS}
+\bigskip
+
+	假设坐标$(a, b, c)$ 即有
+
+	$a * 1 + b * (t - 1) + c * (t - 2)(t - 1) = 1 + t + t^2 $
+
+	解得 
+			\[\begin{cases}
+				a = 3\\
+				b = 4\\
+				c = 1\\
+		\end{cases}\]
+
+	所以在该基下的坐标为$(3,4,1)^T$.
+
+\textbf{9 QUE}
+\bigskip
+
+在 $R^4$ 中有两个基
+
+ \[x_1 = e_1, x_2 = e_2, x_3 = e_3, x_4 = e_4\]
+
+ \[y_1 = (2,1,-1,1), y_2 = (0, 3, 1, 0)\]
+
+ \[y_3 = (5, 3, 2, 1), y_4 = (6, 6, 1, 3) \]
+
+(1)求由前一基改变为后一基的过渡矩阵
+
+(2)求向量$x = (\xi_1, \xi_2, \xi_3, \xi_4)$对后一基的坐标
+
+(3)求对两个基有相同坐标的非零向量
+
+\textbf{9 ANS}
+\bigskip
+
+	(1) 根据$y=XC_2$可知
+
+		\[\begin{pmatrix}
+			2 & 0 & 5 & 6 \\
+			1 & 3 & 3 & 6 \\
+			-1 & 1 & 2 & 1 \\
+			1 & 0 & 1 & 3 \\
+		\end{pmatrix}= 
+		\begin{pmatrix}
+			1 & 0 & 0 & 0 \\
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\
+			0 & 0 & 0 & 1 \\
+		\end{pmatrix}C_2\]
+
+
+		解得\[C_2 = \begin{pmatrix}
+			2 & 0 & 5 & 6 \\
+			1 & 3 & 3 & 6 \\
+			-1 & 1 & 2 & 1 \\
+			1 & 0 & 1 & 3 \\
+		\end{pmatrix}\]
+
+
+	(2) $x = yC_1, y = XC_2$ 可知：$C_2^{-1}x = C_1$
+
+	所以x在后一基中的坐标为$C_2^{-1}x$.
+
+
+	(3) 设 $a = yC, a = XC$
+	
+	
+
+	解得 $(y - I)C = 0$ 
+	
+	化简为阶梯型后为：
+	\[(y - I) = \begin{pmatrix}
+		1 & 0 & 5 & 6 \\
+		0 & 1 & 6 & 7 \\
+		0 & 0 & 1 & 1 \\
+		0 & 0 & 0 & 0 \\
+	\end{pmatrix}\]
+
+	{所以最终结果为$a = k(1, 1, 1, -1)^T $\qquad  k为不为0的常数}
+
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 2 {P25-26 11, 12, 13}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+\textbf{11 QUE}
+\bigskip
+
+求 $R^4$ 的子空间
+
+$V_1 = \{(\xi_1, \xi_2, \xi_3, \xi_4) \mid \xi_1 - \xi_2 + \xi_3 - \xi_4 = 0\}$ 
+
+$V_2 = \{(\xi_1, \xi_2, \xi_3, \xi_4) \mid \xi_1 + \xi_2 + \xi_3 + \xi_4 = 0\}$
+
+的交$V_1 \cap V_2$的基。
+
+
+\textbf{11 ANS}
+\bigskip
+
+上面子空间的矩阵为
+
+\[\begin{pmatrix}
+	1 & -1 & 1 & -1 \\
+	1 & 1 & 1 & 1 \\
+	0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 0 \\
+\end{pmatrix}\]
+
+可以进行阶梯最简化,所以秩为2, 所以基为 $y = k_1(0, 1, 0, -1) + k_2(1, 0, -1, 0)$
+
+
+\textbf{12 QUE}
+\bigskip
+
+给定$R^{2\times2} = \{A = (a_{ij})_{2\times2} | a_{ij}= \in R \}$ (数域$R$上的
+2阶方阵按通常矩阵的加法与数乘矩阵构成的线性空间)的子集
+
+\[V = \{A = (a_{ij})_{2\times2} | a_{ij} \in R \quad and \quad  a_{11} + a_{22} = 0 \} \]
+
+(1)证明$V$是$R^{2\times2}$的子空间
+
+(2)求$V$的维数和一个基
+
+
+
+\textbf{12 ANS}
+\bigskip
+
+(1) 要证明 $V$ 是 $R^{2\times2}$ 的子空间,我们需要验证以下三个条件：
+
+(i) 零向量属于 $V$：
+
+满足 $a_{11} + a_{22} = 0$ 的零矩阵：零矩阵满足条件,属于 $V$。
+
+(ii) 加法封闭性：
+
+假设 $A = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix}$ 和 $B = \begin{bmatrix} b_{11} & b_{12} \\ b_{21} & b_{22} \end{bmatrix}$ 是 $V$ 中的任意两个矩阵,即 $a_{11} + a_{22} = 0$ 和 $b_{11} + b_{22} = 0$。
+
+$(A + B)_{11} + (A + B)_{22} = 0$。
+
+由于 $a_{11} + a_{22} = 0$ 和 $b_{11} + b_{22} = 0$,我们可以得到：
+
+\[(A + B)_{11} + (A + B)_{22} = 0 + 0 = 0\]
+
+因此,$A + B$ 也满足条件,属于 $V$。
+
+(iii) 数乘封闭性：
+
+假设 $A = \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix}$ 是 $V$ 中的矩阵,即 $a_{11} + a_{22} = 0$。$k$ 是任意的实数。
+
+证明 $(kA)_{11} + (kA)_{22} = 0$。
+
+\[(kA)_{11} + (kA)_{22} = k(a_{11}) + k(a_{22})\]
+
+由于 $a_{11} + a_{22} = 0$
+
+\[(kA)_{11} + (kA)_{22} = k(0) = 0\]
+
+因此,$kA$ 也满足条件,属于 $V$。
+
+由此可知,$V$ 是 $R^{2\times2}$ 的子空间。
+
+(2) 要求 $V$ 的维数和
+
+一个基,我们可以先找到一个基,然后计算其维数。
+
+我们已知 $V$ 的元素满足 $a_{11} + a_{22} = 0$。可以选择以下矩阵作为基：
+
+\[ B_1 = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}, \quad B_2 = \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}, \quad B_3 = \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix} \]
+
+这三个矩阵线性无关,并且任意满足条件 $a_{11} + a_{22} = 0$。因此,$\{B_1, B_2, B_3\}$ 是 $V$ 的基。
+
+由于 $\{B_1, B_2, B_3\}$ 是 $V$ 的基,所以 $\text{span}(\{B_1, B_2, B_3\}) = V$。我们需要确定基的个数。
+
+观察矩阵 $B_1, B_2, B_3$,它们都是 $2 \times 2$ 的矩阵,因此,$\text{span}(\{B_1, B_2, B_3\})$ 的维数最多为 $2 \times 2 = 4$。
+
+然而,我们可以注意到 $B_1, B_2, B_3$ 中存在一个线性关系：
+
+\[ B_1 + B_2 + B_3 = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} + \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} + \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix} \]
+
+由于 $1 + (-1) = 0$,我们可以发现 $B_1 + B_2 + B_3$ 也属于 $V$。因此,$\text{span}(\{B_1, B_2, B_3\})$ 中存在冗余向量。
+
+通过观察,我们可以发现 $\{B_1, B_2, B_3\}$ 中的向量是线性无关的。因此,$\text{span}(\{B_1, B_2, B_3\})$ 的维数为 3。
+
+综上所述,$V$ 的维数为 3
+
+
+
+\textbf{13 QUE}
+\bigskip
+
+试证明所有二阶矩阵之集合形成的实线性空间是所有二阶实对称矩阵之集合形成的子空间与所有二阶反对称矩阵之集合形成的子空间的
+直和
+
+\textbf{13 ANS}
+\bigskip
+
+我们需要证明两个条件：
+
+1. 实对称矩阵子空间与实反对称矩阵子空间的交集只包含零矩阵。
+
+2. 任意二阶矩阵可以表示为一个实对称矩阵和一个实反对称矩阵的和。
+
+首先,我们定义实对称矩阵子空间为集合$S$,其中包含所有二阶实对称矩阵。实反对称矩阵子空间定义为集合$A$,其中包含所有二阶实反对称矩阵。
+
+证明第一个条件：实对称矩阵子空间与实反对称矩阵子空间的交集只包含零矩阵。
+
+设矩阵$M$同时属于$S$和$A$,即$M\in S$且$M\in A$。
+
+证明第二个条件：任意二阶矩阵可以表示为一个实对称矩阵和一个实反对称矩阵的和。
+
+设任意二阶矩阵$P$,我们将证明存在一个实对称矩阵$Q$和一个实反对称矩阵$R$,使得$P = Q + R$。
+
+令$Q = \frac{1}{2}(P + P^T)$,$R = \frac{1}{2}(P - P^T)$。
+
+首先验证$Q$是否为实对称矩阵：
+$(Q^T)^T = \left(\frac{1}{2}(P + P^T)\right)^T = \frac{1}{2}(P^T + (P^T)^T) = \frac{1}{2}(P^T + P) = Q$。
+因此,$Q$为实对称矩阵。
+
+接下来验证$R$是否为实反对称矩阵：
+$(R^T)^T = \left(\frac{1}{2}(P - P^T)\right)^T = \frac{1}{2}((P^T)^T - P^T) = \frac{1}{2}(P - P^T) = -R$。
+因此,$R$为实反对称矩阵。
+
+最后,我们有：
+$Q + R = \frac{1}{2}(P + P^T) + \frac{1}{2}(P - P^T) = P$
+
+由此可见,任意二阶矩阵可以表示为一个实对称矩阵和一个实反对称矩阵的和,所有二阶矩阵之集合形成的实线性空间是所有二阶实对称矩阵之集合形成的子空间与所有二阶反对称矩阵之集合形成的子空间的
+直和
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 3 {P77-78 1, 2, 6, 7}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+\textbf{1 QUE}
+\bigskip
+
+判断下列变换中哪些是线性变换
+
+\begin{enumerate}
+	\item 在$R^3$中,设$x = (\xi_1, \xi_2, \xi_3), Tx = ({\xi_1}^2,{\xi_1} + {\xi_2},\xi_3)$
+    \item 在矩阵空间中$R^{n \times n}$中,$Tx = BXC$,这里$B,C$是固定矩阵
+    \item 在线性空间中$P_n$中,$Tf(t) = f(t + 1)$
+\end{enumerate}
+
+
+\textbf{1 ANS}
+\bigskip
+
+\begin{enumerate}
+	\item 不是线性变换。
+	
+	因为${T(2x) = (4\xi_1^2, 2\xi_1 + 2\xi_2, 2\xi_3)}$,但是${2T(x) = (2\xi_1^2, 2\xi_1+ 2\xi_2, 2\xi_3)}$。
+    \item 是线性变换。
+    \item 是线性变换。
+\end{enumerate}
+
+
+\textbf{2 QUE}
+\bigskip
+
+在$R^2$中,设 $x = (\xi_1, \xi_2)$. 证明$T_1x = (\xi_2. -\xi_1)$与$T_2x = (\xi_1,-\xi_2)$是 $R^2$的两个线性变换,并求$T_1 + T_2, T_1T_2$及$T_2T_1$ 
+
+
+\textbf{2 ANS}
+\bigskip
+
+	设${k,l \in R, y = (\alpha_1, \alpha_2)\in R^2}$,$kx + ly = (k\xi_1 + l\alpha_1, k\xi_2 + l\alpha_2)$
+	
+	${T_1(kx + ly) = (k\xi_2 + l\alpha_2,-k\xi_1 - l\alpha_1) = kT_1(x) + lT_1(y)}$
+
+	所以$T_1$是线性变换,同理$T_2$也是线性变换.
+
+	所以${(T_1 + T_2)x = T_1(x) + T_2(x) = (\xi_2 + \xi_1, -\xi_1 - \xi_2)}$
+
+	${(T_1T_2)x = T_1T_2(x) = (-\xi_2, -\xi_1)}$
+
+	${(T_2T_1)x = T_2T_1(x) = (\xi_2, \xi_1)}$.
+
+
+\textbf{6 QUE}
+\bigskip
+
+六个函数
+
+    $x_1 = e^{at} \cos{b} t$, \quad $x_2 = e_{at}\sin{b}t$, \quad $x_3 = t e^{at}\cos{b}t$
+
+    $x_4 = t e^{at} \sin{b} t$, \quad $x_5 = \frac{1}{2} t^2 e^{at} \cos{b} t$, \quad $x_6 =  \frac{1}{2} t^2 e^{at}\sin{b}t$
+
+    的所有实系数线性组合构成实数域R上的一个六维线性空间$V^6 = L(x_1, x_2,x_3,x_4,x_5,x_6)$,求微分变换D在基$x_1,x_2, \cdots, x_6$下的矩阵
+
+\textbf{6 ANS}
+\bigskip
+
+${D_{x_1}} = ae^{at} \cos{b}t - e^{at} b\sin{b} t = ax_1 - bx_2$
+
+${D_{x_2}} = ae^{at} \sin{b}t + e^{at} b\cos{b} t = bx_1 + ax_2$
+
+${D_{x_3}} = e^{at} \cos{b}t + tae^{at} b\cos{b} t - te^{at} b\sin{b} t = x_1 + ax_3 -bx_4$
+
+${D_{x_4}} = e^{at} \sin{b}t - tae^{at} b\cos{b} t + te^{at} b\cos{b} t= x_2 + bx_3 + ax_4$
+
+${D_{x_5}} = te^{at} \cos{b}t + \frac{1}{2}t^2ae^{at} b\sin{b} t - \frac{1}{2}t^2e^{at} b\sin{b} t= x_3 + ax_5 - bx_6$
+
+${D_{x_6}} = te^{at} \sin{b}t + \frac{1}{2}t^2ae^{at} \sin{b} t + + \frac{1}{2}t^2e^{at} b\cos{b} t = x_4 + bx_5 + ax_6$
+
+所以
+
+
+\[D = \begin{bmatrix}
+    a & b & 1 & 0 & 0 & 0 \\
+	-b & a & 0 & 1 & 0 & 0 \\
+	0 & 0 & a & b & 1 & 0 \\
+	0 & 0 & -b & a & 0 & 1 \\
+	0 & 0 & 0 & 0 & a & b \\
+	0 & 0 & 0 & 0 & -b & a
+\end{bmatrix}\]
+
+\textbf{7 QUE}
+\bigskip
+
+已知$R^3$的线性变换T在基$x_1 = (-1,1,1), x_2 = (1,0,-1),x_3 = (0,1,1)$下的矩阵是
+\[\begin{bmatrix}
+    1 & 0 & 1 \\
+	1 & 1 & 0 \\
+	-1 & 2 & 1
+\end{bmatrix}\]
+求T在基${e_1 = (1, 0, 0), e_2 = (0, 1, 0), e_3 = (0, 0, 1)}$下的矩阵。
+
+\textbf{7 ANS}
+\bigskip
+
+由题意得：
+$C^{-1} = $
+$\begin{bmatrix}
+    1 & 0 & 1 \\
+	1 & 1 & 0 \\
+	-1 & 2 & 1
+\end{bmatrix}$
+
+所以在新基下的矩阵为
+$C^{-1}
+\begin{bmatrix}
+    1 & 0 & 1 \\
+	1 & 1 & 0 \\
+	-1 & 2 & 1
+\end{bmatrix}C = 
+\begin{bmatrix}
+    -1 & 1 & -2 \\
+	2 & 2 & 0 \\
+	3 & 0 & 2
+\end{bmatrix}
+$
+
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 4 {P106-107} 1 (1)(2), 2, 4, 5, 10, 11}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+\textbf{1(1)(2) QUE}
+\bigskip
+
+	设${x = (\xi_1, \xi_2, \dots, \xi_n)}$, $y = (\eta_1, \eta_2, \dots, \eta_n)$是${R^n}$的任意两个向量, $A = (a_{ij})_{n*n}$
+	
+	是正定矩阵,令$(x, y) = xAy^T$,则
+
+	(1)证明在该定义下$R^n$形成欧式空间
+
+	(2)求$R^n$对于单位向量$e_1 = (1, 0, 0, \dots, 0), e_2 = (0, 1, 0, \dots, 0), \dots, e_n = (0, 0,0, \dots, 0, 1)$的度量矩阵
+
+\textbf{1(1)(2) ANS}
+\bigskip
+
+(1) 要证明$R^n$形成欧式空间,需要满足以下条件：
+
+(i) 零向量的存在：由于$x = (\xi_1, \xi_2, \dots, \xi_n)$是$R^n$的任意向量,令$x = 0$,则有$(0, y) = 0Ay^T = 0$,因此零向量存在。
+
+(ii) 向量的加法：满足定义要求。
+
+(iii) 数乘：数乘满足定义要求。
+
+(iv) 内积的存在：定义内积为$(x, y) = xAy^T$,根据矩阵的性质,内积满足交换律和线性性质：内积满足定义要求。
+
+综上所述,$R^n$在给定的内积定义下满足欧式空间的所有条件。
+
+
+
+(2)由$(e_i,e_j) = e_iA{e_j}^T = a_{ij}$知，$r^n$中基$e_1,e_2, \dots, e_n$的度量矩阵为A。
+
+
+\textbf{2 QUE}
+\bigskip
+
+	设$x_1, x_2, \dots, x_n$是实线性空间$v^n$的基,向量$x = \xi_1x_1 +\xi_2x_2+\dots+\xi_nx_n, y = \eta_1x_1+ \eta_2x_2+\dots
+	+\xi_nx_n$对应于实数$(x, y) = \sum_{i = 1}^ni\xi_i\eta_i$,试问$V^n$是否是欧式空间。
+
+
+\textbf{2 ANS}
+\bigskip
+
+要确定$V^n$是否是欧式空间,我们需要验证欧式空间的定义条件：
+
+(i) 零向量的存在：零向量表示为$x = 0x_1 + 0x_2 + \dots + 0x_n$,对应的实数为$(x, y) = \sum_{i=1}^ni(0)(0) = 0$。因此,零向量存在。
+
+(ii) 向量的加法：向量的加法满足定义要求。
+
+(iii) 数乘：数乘满足定义要求。
+
+(iv) 内积的存在：定义内积为$(x, y) = \sum_{i=1}^ni\xi_i\eta_i$,根据内积的定义,内积满足交换律和线性性质：
+\begin{align*}
+(x, y) &= \sum_{i=1}^ni\xi_i\eta_i \\
+&= \sum_{i=1}^ni\eta_i\xi_i \\
+&= (y, x)
+\end{align*}
+\begin{align*}
+(x, ay) &= \sum_{i=1}^ni\xi_i(a\eta_i) \\
+&= a\sum_{i=1}^ni\xi_i\eta_i \\
+&= a(x, y)
+\end{align*}
+\begin{align*}
+(x, y+z) &= \sum_{i=1}^ni\xi_i(\eta_i+\zeta_i) \\
+&= \sum_{i=1}^ni\xi_i\eta_i + \sum_{i=1}^ni\xi_i\zeta_i \\
+&= (x, y) + (x, z)
+\end{align*}
+
+因此,内积满足定义要求。
+
+综上所述,$V^n$在给定的内积定义下满足欧式空间的所有条件。
+	
+
+
+\textbf{4 QUE}
+\bigskip
+
+	在$R^4$中,求一单位向量与$(1, 1, -1, 1), (1, -1, -1, 1)$及$(2,1,1,13)$均正交
+
+\textbf{4 ANS}
+\bigskip
+
+设该向量为 $(x, y, z, w)$，我们可以得到以下方程组：
+\[ \begin{aligned}
+(1, 1, -1, 1) \cdot (x, y, z, w) &= 0 \\
+(1, -1, -1, 1) \cdot (x, y, z, w) &= 0 \\
+(2, 1, 1, 13) \cdot (x, y, z, w) &= 0
+\end{aligned}\]
+
+该齐次线性方程组的非零解为 $x = (4, 0, 1, -3)$, 然后进行单位化。
+
+因此，单位向量为：
+$(\frac{4}{\sqrt[]{26}}, 0, \frac{1}{\sqrt[]{26}}, \frac{-3}{\sqrt[]{26}})$。
+
+
+
+%%%% 从这里开始错误
+
+\textbf{5 QUE}
+\bigskip
+
+设$x_1, x_2, x_3, x_4, x_5$是欧式空间$V^5$的一个标准正交基。$V_1 = L(y_1, y_2, y_3)$,其中$y_1 = x_1 + x_5, y_2 = x_1 - x_2 + x_4, y_3 = 2x_1 + x_2 +x_3$,求
+$V_1$的一个标准正交基
+
+\textbf{5 ANS}
+\bigskip
+
+
+因为$\alpha_1, \alpha_2,\alpha_3$线性无关，所以$y_1, y_2, y_3$线性无关。
+
+因此,$y_1, y_2, y_3$就是$V_1$的一个基,只需要对它们进行单位化即可得到一个标准正交基。
+
+
+现在,我们可以计算标准正交基：
+
+\[
+u_1 = \frac{y_1}{\|y_1\|}, \quad u_2 = \frac{y_2}{\|y_2\|}, \quad u_3 = \frac{y_3}{\|y_3\|}
+\]
+
+其中,$u_1, u_2, u_3$是$V_1$的标准正交基。
+
+\textbf{10 QUE}
+\bigskip
+
+设$T$是欧式空间$V$中的线性变换,且对$x, y \in V$,有
+\[ (Tx, y) = -(x, Ty)\]
+则称$T$为反对称变换,证明$T$为反对称变换的充要条件是,T在V的标准正交基下的矩阵$A$为反对称矩阵,即有$A^T = -A$
+
+\textbf{10 ANS}
+\bigskip
+
+
+证明必要性：
+
+假设$T$是反对称变换,我们需要证明$T$在$V$的标准正交基下的矩阵$A$满足$A^T = -A$。
+
+由于我们考虑的是$V$的标准正交基,设该基为$\{v_1, v_2, \ldots, v_n\}$,则对于任意的$i$和$j$,有$(v_i, v_j) = \delta_{ij}$,其中$\delta_{ij}$是Kronecker delta符号,当$i=j$时为1,否则为0。
+
+设向量$v$在基$\{v_1, v_2, \ldots, v_n\}$下的坐标表示为$[v]_\mathcal{B} = \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix}$,其中$\mathcal{B}$是基$\{v_1, v_2, \ldots, v_n\}$。
+
+考虑$(Tv, v)$的内积,根据反对称变换的定义有：
+\[(Tv, v) = -(v, Tv)\]
+
+将$v$的坐标表示和$T$的矩阵表示相结合,可以得到：
+\[(Tv, v) = ([Tv]_\mathcal{B})^T [v]_\mathcal{B} = \begin{bmatrix} a_1 & a_2 & \cdots & a_n \end{bmatrix}^T A \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix}\]
+
+同样地,我们可以得到：
+\[(v, Tv) = [v]_\mathcal{B}^T A^T [v]_\mathcal{B} = \begin{bmatrix} a_1 & a_2 & \cdots & a_n \end{bmatrix}^T A^T \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix}\]
+
+由于$(Tv, v) = -(v, Tv)$,我们有：
+\[\begin{bmatrix} a_1 & a_2 & \cdots & a_n \end{bmatrix}^T A \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix} = -\begin{bmatrix} a_1 & a_2 & \cdots & a_n \end{bmatrix}^T A^T \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix}\]
+
+对于任意的向量$v$,上式成立,因此我们可以得到：
+\[A = -A^T\]
+
+即矩阵$A$为反对称矩阵,证明了必要性。
+
+充分性：
+
+设向量$v$在基$\{v_1, v_2, \ldots, v_n\}$下的坐标表示为$[v]_\mathcal{B} = \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix}$,其中$\mathcal{B}$是基$\{v_1, v_2, \ldots, v_n\}$。
+
+根据$T$的矩阵表示,我们有$[Tv]_\mathcal{B} = A[v]_\mathcal{B}$。
+
+考虑$(Tv, v)$的内积,根据矩阵乘法的定义有：
+\[(Tv, v) = ([Tv]_\mathcal{B})^T [v]_\mathcal{B} = (A[v]_\mathcal{B})^T [v]_\mathcal{B}\]
+
+展开上式,我们可以得到：
+\[(Tv, v) = (A[v]_\mathcal{B})^T [v]_\mathcal{B} = ([v]_\mathcal{B})^T A^T [v]_\mathcal{B}\]
+
+由于$A$为反对称矩阵,即$A^T = -A$,上式可以继续化简为：
+\[(Tv, v) = ([v]_\mathcal{B})^T A^T [v]_\mathcal{B} = -([v]_\mathcal{B})^T A [v]_\mathcal{B}\]
+
+而根据内积的定义,我们有$(v, Tv) = -([v]_\mathcal{B})^T A [v]_\mathcal{B}$。
+
+由于$(Tv, v) = -(v, Tv)$,我们得到了反对称变换的定义。因此,$T$是反对称变换。
+
+综上所述,$T$为反对称变换的必要条件是$T$在$V$的标准正交基下的矩阵$A$为反对称矩阵,即$A^T = -A$。
+
+\textbf{11 QUE}
+\bigskip
+
+对于下列矩阵A,求正交(酉)矩阵P,使$P^{-1}AP$为对角矩阵：
+
+\begin{enumerate}
+	\item A = $\begin{bmatrix}
+		2 & 2 & -2 \\
+		2 & 5 & -4 \\
+		-2 & -4 & 5  
+		\end{bmatrix}$
+	
+	\item A = $\begin{bmatrix}
+		0 & j & 1 \\
+	-j & 0 & 0 \\
+	1 & 0 & 0
+	\end{bmatrix}$
+
+\end{enumerate}
+
+
+
+
+\textbf{11 ANS}
+\bigskip
+
+(1) 对于矩阵A = $\begin{bmatrix}
+2 & 2 & -2 \\
+2 & 5 & -4 \\
+-2 & -4 & 5  
+\end{bmatrix}$
+
+$\det(\lambda I - A) = 0 = (\lambda - 1)^2(\lambda -10)$
+
+当$\lambda = 1$(二重)时，对应的特征向量为$(2, 0, 1),(-2, 1, 0)$,将其进行正交单位化得到
+
+$x_1 = (\frac{-2}{\sqrt[]{5}}, \frac{1}{\sqrt[]{5}}, 0),x_2 = (\frac{2}{3\sqrt[]{5}}, \frac{4}{3\sqrt[]{5}}, \frac{5}{3\sqrt[]{5}})$
+
+当$\lambda = 10$时，对应的特征向量为$(-1,-2,2)$,将其单位化化得到
+
+$x_3 = (\frac{-1}{3}, \frac{-2}{3}, \frac{2}{3})$
+
+令$P = (x_1, x_2, x_3)$ 可得 $P^{-1}AP = \begin{bmatrix}
+	1 & & \\
+	& 1 & \\
+	& & 10 
+\end{bmatrix}$
+
+\bigskip
+
+(2) 对于矩阵A = $\begin{bmatrix}
+0 & j & 1 \\
+-j & 0 & 0 \\
+1 & 0 & 0
+\end{bmatrix}$
+
+$\det(\lambda I - A) = 0 = \lambda(\lambda^2 - 2) = \lambda(\lambda - \sqrt[]{2})(\lambda + \sqrt[]{2})$
+
+当$\lambda = 0$时，对应的特征向量为$(0, j, 1)$,将其进行正交单位化得到
+
+$x_1 = (0, \frac{j}{\sqrt[]{2}}, \frac{1}{\sqrt[]{2}})$
+
+当$\lambda = \sqrt[]{2}$时，对应的特征向量为$(\sqrt[]{2}, -j, 1)$,将其进行正交单位化得到
+
+$x_2 = (\frac{1}{\sqrt[]{2}}, \frac{-j}{2}, \frac{1}{2})$
+
+当$\lambda = - \sqrt[]{2}$时，对应的特征向量为$(-\sqrt[]{2}, -j, 1)$,将其进行正交单位化得到
+
+$x_3 = (-\frac{1}{\sqrt[]{2}}, -\frac{j}{2}, \frac{1}{2})$
+
+
+令$P = (x_1, x_2, x_3)$ 可得 $P^{-1}AP = \begin{bmatrix}
+	0 & & \\
+	& \sqrt[]{2} & \\
+	& & -\sqrt[]{2} 
+\end{bmatrix}$
+
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 5 {P79 19(1)(3)}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+
+\textbf{19(1)(3) QUE}
+\bigskip
+
+求下列各矩阵的Jordan标准型。
+
+(1) $\begin{bmatrix}
+	1 & 2 & 0 \\
+0 & 2 & 0 \\
+-2 & -1 & -1  
+\end{bmatrix}$
+
+(3)$\begin{bmatrix}
+	3 & 1 & 0 & 0 \\
+-4 & -1 & 0 & 0\\
+7 & 1 & 2 & 1 \\
+-7 & -6 & -1 & 0  
+\end{bmatrix}$
+
+\textbf{19(1)(3) ANS}
+\bigskip
+
+
+(1)$\det(\lambda I - A) = (\lambda - 1)(\lambda - 2)(\lambda + 1)$, A有三个不同的特征值，从而A的Jordan标准型
+为$\begin{bmatrix}
+	1 &  &  \\
+ & 2 &  \\
+ &  & -1  
+\end{bmatrix}$
+
+(3)$det(\lambda I - A) = (\lambda - 1)^4$,由此可知$D_4(\lambda) = (\lambda)^4$,同时可知 $D_1(\lambda) = 1$
+
+容易求得$D_2(\lambda) = 1$,位于$\lambda - A$的第2, 3, 4行与第1, 2, 4列处的三阶子式 $ = 7 \lambda^2 - 4 \lambda + 17$
+他和$D_4(\lambda)$互质，所以$D_3(\lambda) = 1$,于是$A$的Jordan标准型为
+
+\[ j = \begin{bmatrix}
+	1 & 1 & 0 & 0 \\
+	0 & 1 & 1 & 0 \\
+	0 & 0 & 1 & 1 \\
+	0 & 0 & 0 & 1 \\
+\end{bmatrix}\]
+
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 6 {P163 3, 4, 5, 6}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+\textbf{3 QUE}
+\bigskip
+
+若A为是实反对称矩阵$(A^T = -A)$， 则$e^A$为正交矩阵。
+
+\textbf{3 ANS}
+\bigskip
+
+若证明为正交矩阵，只需证明$e^A {e^A}^T = I$.
+
+$e^A({e^A}^T) = e^A {e^A}^T = e^{A - A} = I$  
+
+所以$e^A$为正交矩阵。
+
+\textbf{4 QUE}
+\bigskip
+
+若A是Hermite矩阵,则$e^{iA}$是酉矩阵。
+
+\textbf{4 ANS}
+\bigskip
+
+若证明为正交酉矩阵，只需证明$e^{iA} {e^{iA}}^T = I$.
+
+$e^{iA} {e^{iA}}^T = e^{iA} {e^{-iA}} = e^{O} = I$  
+
+所以$e^{iA}$为正交酉矩阵。
+
+\textbf{5 QUE}
+\bigskip
+
+设  $A = \begin{bmatrix}
+	2 & 1 & 0 \\
+	0 & 0 & 1 \\
+	0 & 1 & 0
+\end{bmatrix}$,求$e^A, e^{tA}(t \in R), \sin A$
+
+\textbf{5 ANS}
+\bigskip
+
+$\det(\lambda I - A) =  0 = (\lambda -2)(\lambda + 1)(\lambda - 1)$
+
+得到特征值为2 对应的特征向量为$(1, 0 ,0)$
+
+得到特征值为1 对应的特征向量为$(-1, 1 ,1)$
+
+得到特征值为-1 对应的特征向量为$(1, -3 ,3)$
+
+即存在可逆矩阵$P = \begin{bmatrix}
+	1 & -1 & 1 \\
+	0 & 1 & -3 \\
+	0 & 1 & 3
+\end{bmatrix}$
+使得$P^{-1}AP = \begin{bmatrix}
+	2 & 0 & 0 \\
+	0 & 1 & 0 \\
+	0 & 0 & -1 
+\end{bmatrix}$
+
+
+同时$P^{-1} = \frac{1}{6} \begin{bmatrix}
+	6 & 4 & 2 \\
+	0 & 3 & 3 \\
+	0 & -1 & 1
+\end{bmatrix}$
+
+
+因此，根据以上的分析：
+
+(1)$e^A = Pdiag(e^2, e, e^{-1})P^{-1} = $
+
+\[ \frac{1}{6}  \begin{bmatrix}
+	6e^2 & 4e^2 - 3e + e^{-1} & 2e^2 - 3e +e^{-1} \\
+	0 & 3e +3e^{-1} & 3e -3e^{-1} \\
+	0 & 3e -3e^{-1} & 3e + 3e^{-1} 
+\end{bmatrix}\]
+
+(2)$e^{tA} = Pdiag(e^{2t}, e^t, e^{-t})P^{-1} = $
+
+\[ \frac{1}{6}  \begin{bmatrix}
+	6e^{2t} & 4e^{2t}-3e^t-e^{-t} & 2e^{2t} -3e^t + t^-t \\
+	0 & 3e^t +3e^{-t} & 3e^t -3e^{-t} \\
+	0 & -e^t + 3e^{-t} & 3e^t + 3e^{-t}
+\end{bmatrix}\]
+
+(3)$e^A = Pdiag(\sin(2), \sin(1), \sin(-1))P^{-1} = $
+
+\[ \frac{1}{6}  \begin{bmatrix}
+	6sin2 & 4sin2 -3sin1 -sin(-1) & 2sin2 -3sin1 + sin(-1) \\
+	0 & 3sin1 + 3sin(-1) & 3sin1 -3sin(-1) \\
+	0 & 3sin1 - 3sin(-1) & 3sin1 + 3sin(-1)
+\end{bmatrix}\]
+
+\textbf{6 QUE}
+\bigskip
+
+设$f(z) = \ln(z)$, 求$f(A)$,这里A为
+
+(1) $\begin{bmatrix}
+	1 & 0 & 0 & 0 \\
+	1 & 1 & 0 & 0 \\
+	0 & 1 & 1 & 0 \\
+	0 & 0 & 1 & 1
+\end{bmatrix}$
+\qquad \qquad (2)$\begin{bmatrix}
+	2 & 1 & 0 & 0 \\
+	0 & 2 & 0 & 0 \\
+	0 & 0 & 1 & 1 \\
+	0 & 0 & 0 & 1
+\end{bmatrix}$
+
+\textbf{6 ANS}
+\bigskip
+
+(1)因为反斜对角单位矩阵有特殊的用法。 因此$P = \begin{bmatrix}
+	 & & & 1 \\
+	 & & 1 & \\
+	 & 1 & & \\
+	1 & & &
+\end{bmatrix}$,
+$P^{-1}AP = J = \begin{bmatrix}
+	1 & 1 & & \\
+	& 1 & 1 & \\
+	& & 1 & 1 \\
+	& & & 1 
+\end{bmatrix}$
+
+所以$\ln(A) = P \ln(J) p^{-1} = \begin{bmatrix}
+	0 & 0 & 0 & 0 \\
+	1 & 0 & 0 & 0 \\
+	-\frac{1}{2} & 1 & 0 & 0 \\
+	\frac{1}{3} & -\frac{1}{2} & 1 & 0
+\end{bmatrix}$
+
+
+(2)$A = \begin{bmatrix}
+	J_1 & \\
+	& J_2 
+\end{bmatrix}$
+
+$J_1 = \begin{bmatrix}
+	2 & 1\\
+	0 & 2 
+\end{bmatrix}$,$J_2 = \begin{bmatrix}
+	1 & 1\\
+	0 & 1 
+\end{bmatrix}$
+
+$\ln(A) = \begin{bmatrix}
+	\ln(j_1) & \\
+	& \ln(J_2)
+\end{bmatrix} = \begin{bmatrix}
+	\ln(2) & \frac{1}{2} & 0 & 0 \\
+	0 & \ln(2) & 0 & 0 \\
+	0 & 0 & 0 & 1 \\
+	0 & 0 & 0 & 0
+\end{bmatrix}$
+
+
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 8 {P170-171 5, 9 P177 3, 4}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+\textbf{5 QUE}
+\bigskip
+
+若 $A = A(t) = (a_{ij}(t))_{n \times n}$非奇异,证明 \[
+	\frac{d}{dt}A^{-1} = -A^{-1}\frac{dA}{dt}A^{-1}
+\]
+
+\textbf{5 ANS}
+\bigskip
+
+$AA^{-1} = I$,两边对t进行求导可得
+
+$\frac{dA}{dt}A^{-1} + \frac{A^{-1}}{dt} = 0$ 
+
+整理可得后两边的左侧同时乘以$A^{-1}$, 可得$-A^{-1}\frac{dA}{dt}A^{-1}A^{-1} = \frac{dA^{-1}}{dt}$ 
+
+
+\textbf{9 QUE}
+\bigskip
+
+举例说明关系式 \[ \frac{d}{dt}(A(t))^m = m(A(t))^{m - 1}\frac{d}{dt}A(t)\]
+
+一般不成立，此处$A(t) = (a_{ij}(t))_{n \times n}$,又在什么条件下，他才能能够成立。
+
+
+
+\textbf{9 ANS}
+\bigskip
+
+关系式 \(\frac{d}{dt}(A(t))^m = m(A(t))^{m - 1}\frac{d}{dt}A(t)\) 在一般情况下并不成立。然而，在特定条件下，它可以成立。
+
+条件：\(A(t) = (a_{ij}(t))_{n \times n}\) 的矩阵 \(A(t)\) 必须满足以下条件：
+
+1. \(A(t)\) 是一个可微的矩阵函数，即所有 \(a_{ij}(t)\) 都是关于 \(t\) 的可微函数。
+
+2. \(A(t)\) 是一个可幂乘的矩阵函数，即对于任意实数 \(m\)，\(A(t)\) 的幂 \(A(t)^m\) 是定义良好的。
+
+在满足上述条件的前提下，关系式 \(\frac{d}{dt}(A(t))^m = m(A(t))^{m - 1}\frac{d}{dt}A(t)\) 成立。
+
+这个关系式是矩阵求导法则的一种推广形式，类似于实数函数的幂函数求导法则。它表明，当矩阵 \(A(t)\) 可微且可幂乘时，对 \(A(t)\) 进行幂运算后再求导，等价于先对 \(A(t)\) 求导，然后再进行幂运算，并乘以幂指数 \(m\)。
+
+\textbf{3 QUE}
+\bigskip
+
+求微分方程组
+
+\[
+\begin{cases}
+\frac{d\xi_1}{dt} = -2\xi_1+\xi_2 + 1 \\
+\frac{d\xi_2}{dt} = -4\xi_1+2\xi_2 + 2 \\
+\frac{d\xi_3}{dt} = \xi_1+\xi_3 + e^t - 1 
+\end{cases} \]满足初始条件$\xi_1(0) = 1, \xi_2(0) = 1, \xi_3(0) = -1$的解。
+
+\textbf{3 ANS}
+\bigskip
+
+令 $x = (\xi_1, \xi_2, \xi_3), A = \begin{bmatrix}
+	-2 & 1 & 0 \\
+	-4 & 2 & 0 \\
+	1 & 0 &  1
+\end{bmatrix}, b = (1, 2, e^t -1), x(0) = (1,1,-1)$ 
+
+$\det(\lambda I - x) = 0 = \lambda^2(\lambda - 1)$ 可知 $A^3 = A^2$
+
+
+\[x(t) = e^{At} \{ \begin{bmatrix} 1 \\ 1 \\ -1 \end{bmatrix} + \begin{bmatrix} t \\ 2t \\ 0 \end{bmatrix} \}  = \begin{bmatrix}
+	1 \\ 1 \\ (t - 1)e^t
+\end{bmatrix}\]
+
+
+\textbf{4 QUE}
+\bigskip
+
+设 $A = (a_{ij})_{n \times n}$为常数矩阵，$X = (\xi_{ij}(t))_{n \times n}$,a 为常数，试证明下面的Cauchy微分方程组
+\[ \frac{dX}{dt} = \frac{A}{t - a}X\]可简化为
+
+\[\frac{dX}{du} = AX\],其中， $u = \ln(t - a)$ .并进而证明其通解为 $X = (t - a)^AC$,其中，C为n阶常数矩阵。
+
+
+\textbf{4 ANS}
+\bigskip
+
+由题意可得$t = e^u + a$即原式可化简为
+
+$\frac{dX}{du} = \frac{dx}{dt}\frac{dt}{du} = AX$
+
+通解为 $X(t) = e^{Au}C = e^{\ln(t - a)}C = (t - a)^A C$其中，C为n阶常数矩阵。
+
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 9 {P195 2, 3}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+\textbf{2 QUE}
+\bigskip
+
+证明式(4.1.30).
+
+\textbf{2 ANS}
+\bigskip
+
+Doolittle分解是一种将一个$n$阶矩阵$A$分解为一个单位下三角矩阵$L$和一个上三角矩阵$U$的方法，即$A = LU$。下面是Doolittle分解的算法公式：
+
+1. 初始化：将矩阵$A$的第一列作为矩阵$L$的第一列，即$L_{i1} = A_{i1}$（$i=1,2,\ldots,n$），将矩阵$U$的第一行设置为矩阵$A$的第一行，即$U_{1j} = A_{1j}$（$j=1,2,\ldots,n$）。
+
+2. 对于$i=2,3,\ldots,n$，执行以下步骤：
+   - 计算矩阵$L$的第$i$行第$i-1$列及之前的元素，即
+     $$
+     L_{ik} = A_{ik} - \sum_{j=1}^{i-1} L_{ij}U_{jk},\quad k=1,2,\ldots,i-1.
+     $$
+   - 计算矩阵$U$的第$i$行第$i$列及之后的元素，即
+     $$
+     U_{ij} = \frac{1}{L_{ii}} \left(A_{ij} - \sum_{k=1}^{i-1} L_{ik}U_{kj}\right),\quad j=i,i+1,\ldots,n.
+     $$
+
+3. 输出分解结果：矩阵$L$为单位下三角矩阵，矩阵$U$为上三角矩阵，即$A = LU$。
+
+注意：在算法中，$L_{ij}$表示矩阵$L$的第$i$行第$j$列的元素，$U_{ij}$表示矩阵$U$的第$i$行第$j$列的元素，$A_{ij}$表示矩阵$A$的第$i$行第$j$列的元素。
+
+
+\textbf{3 QUE}
+\bigskip
+
+设A为实对称正定矩阵,且Gauss消去法第一步得到的矩阵为 \[ A^{(1)} = \begin{array}{cc:cc}
+	a_{11} :& a_{12}  \dots a_{1n} \\
+	\hline
+	0 \quad:& \\
+	\vdots \quad :&        B \\
+	0 \quad:& 
+\end{array}
+	\]
+证明B仍是实对称正定矩阵，且对角元素不增加。
+
+\textbf{3 ANS}
+\bigskip
+
+设$A = (a_{ij})_{n \times n}, a = (a_{21}, \ldots, a_{n1})^T$,由于A对称，所以A可分块为 $A = \begin{bmatrix}
+	a_{11} & a^T \\
+	a & A_1
+\end{bmatrix}$,其中$A_1$是n - 1阶对称矩阵，于是 \[ A^{(1)} = \begin{bmatrix}
+	a_{11} & a^T \\
+	0 & A_1 - \frac{aa^T}{a_{11}}
+\end{bmatrix}\]
+
+	容易证$B^T = B$。任取非零列向量$y \in R^{n - 1}$, 则$x = \begin{bmatrix}
+		-\frac{a^T y}{a_{11}} \\
+		y
+	\end{bmatrix} \neq 0$从而$x^TAx > 0$ 
+
+	故 $B = A_1 - \frac{aa^T}{a_{11}}$是正定矩阵。
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 10 {P219-220 1, 7, 8}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+\textbf{1 QUE}
+\bigskip
+
+用Schmidt正交化方法求矩阵 \[ A = \begin{bmatrix}
+	0 & 1 & 1 \\
+	1 & 1 & 0 \\
+	1 & 0 & 1 
+\end{bmatrix}\]的QR分解。
+
+\textbf{1 ANS}
+\bigskip
+
+令$a_1 = (0, 1, 1)^T, a_2 = (1, 1, 0)^T, a_3 = (1, 0, 1)^T$
+
+因为$a_1, a_2, a_3$线性无关，所以只需要正交单位化
+
+$p_1 = a_1 = (0, 1, 1)^T$
+
+$p_2 = a_2 - \frac{(a_2, P_1)}{(P_1, P_1)}P_1 = (1, \frac{1}{2}, -\frac{1}{2})^T$ 
+
+$p_3 = a_3 - \frac{(a_3, P_2)}{(P_2, P_2)}P_2 - \frac{(a_3,P_1)}{(P_1, P_1)}P_1 = (\frac{1}{3}, \frac{1}{6}, -\frac{1}{6})^T$
+
+所以： \[  Q = \begin{bmatrix}
+	0 & \frac{2}{\sqrt[]{6}} &\frac{1}{\sqrt[]{3}} \\
+	\frac{1}{\sqrt[]{2}} & \frac{1}{\sqrt[]{6}}& -\frac{1}{\sqrt[]{3}} \\
+	\frac{1}{\sqrt[]{2}} & \frac{-1}{\sqrt[]{6}}& \frac{1}{\sqrt[]{3}} 
+\end{bmatrix}\]
+
+	\[ R = \begin{bmatrix}
+		\sqrt[]{2} & \frac{1}{\sqrt[]{2}} & \frac{1}{\sqrt[]{2}} \\
+		& \frac{2}{\sqrt[]{6}} & \frac{1}{\sqrt[]{6}} \\
+		& & \frac{2}{\sqrt[]{3}}
+	\end{bmatrix}\]
+
+因此 $A = QR$.
+
+\textbf{7 QUE}
+\bigskip
+
+用Givens变换求矩阵
+\[ A = \begin{bmatrix}
+	2 & 2 & 1 \\
+	0 & 2 & 2\\
+	2 & 1 & 2
+\end{bmatrix}\]的QR分解
+
+\textbf{7 ANS}
+\bigskip
+\raggedright{\href{https://www.bilibili.com/video/BV1eG4y1d7p4?vd_source=2fba6d5dce51e552f7fe3aa0508a4260}{点击前往说明讲解课程-利用Givens变换进行QR分解}}
+\bigskip
+
+
+取$T_{13}, c_1 = \frac{\sqrt[]{2}}{2}, s_1 = \frac{\sqrt[]{2}}{2}$ 所以 \[ T_{13} = \begin{bmatrix}
+	\frac{\sqrt[]{2}}{2} & 0 & \frac{\sqrt[]{2}}{2}\\
+	0 & 1 & 0 \\
+	-\frac{\sqrt[]{2}}{2} & 0 & \frac{\sqrt[]{2}}{2} \\
+\end{bmatrix}\]且$T_{13}A = \begin{bmatrix}
+	2\sqrt[]{2} & \frac{3\sqrt[]{2}}{2} & \frac{3\sqrt[]{2}}{2} \\
+	0 & 2  & 2 \\
+	0 & -\frac{\sqrt[]{2}}{2} & \frac{\sqrt[]{2}}{2}
+\end{bmatrix}$
+
+取$T_{23}, c_2 = \frac{2\sqrt[]{2}}{3}, s_2 = \frac{-1}{3}$ 所以 \[ T_{23} = \begin{bmatrix}
+	\frac{2\sqrt[]{2}}{3} &  \frac{-1}{3} \\
+	\frac{1}{3} &  \frac{2\sqrt[]{2}}{3}
+\end{bmatrix}\]
+
+
+令$T = \begin{bmatrix}
+	1 \\
+	& T_{23}
+\end{bmatrix}T_{13}$,于是
+
+\[ Q = T^T = \begin{bmatrix}
+	\frac{\sqrt[]{2}}{2} & \frac{\sqrt[]{2}}{6} & \frac{-2}{3} \\
+	0 & \frac{4\sqrt[]{2}}{6}  & \frac{1}{3} \\
+	\frac{\sqrt[]{2}}{2} & -\frac{\sqrt[]{2}}{6} & \frac{2}{3}
+\end{bmatrix}, R = T_{23}T_{13}A =\begin{bmatrix}
+	2\sqrt[]{2} & \frac{3}{\sqrt[]{2}} & \frac{3}{\sqrt[]{2}} \\
+	0 & \frac{3}{\sqrt[]{2}} & \frac{7}{3\sqrt[]{2}} \\
+	0 & 0 & \frac{4}{3}
+\end{bmatrix}\]
+
+\textbf{8 QUE}
+\bigskip
+
+用Householder求变换矩阵 \[ A = \begin{bmatrix}
+	0 & 4 & 1 \\
+	1 & 1 & 1 \\
+	0 & 3 & 2
+\end{bmatrix}\]的QR分解
+
+
+\textbf{8 ANS}
+\bigskip
+
+
+$a_1 = (0, 1, 0)^T$,取$\alpha_1 = \parallel a_1 \parallel = 1$，做单位向量 $u_1 = \frac{a_1 - \alpha_1 e_1}{\parallel a_1 -\alpha_1 e_1\parallel} =\frac{1}{\sqrt[]{2}}(-1,1, 0)^T$
+
+于是$H_1 = I - 2u_1u_1^T = \begin{bmatrix}
+	0 & 1 & 0 \\
+	1 & 0 & 0 \\
+	0 & 0 & 1
+\end{bmatrix}$
+
+$H_1A = \begin{bmatrix}
+	1 & 1 & 1 \\
+	0 & 4 & 1 \\
+	0 & 3 & 2
+\end{bmatrix}$
+
+$a_2 = (4,3)^T$,取$\alpha_2 = \parallel a_2 \parallel = 5$，做单位向量 $u_2 = \frac{a_2 - \alpha_2 e_1}{\parallel a_2 -\alpha_2 e_1\parallel} = \frac{1}{\sqrt[]{10}}(-1, 3)^T$
+
+于是$H_2 = I - 2u_2u_2^T = \frac{1}{5}\begin{bmatrix}
+	4 & 3 \\
+	3 & -4
+\end{bmatrix}$
+
+令$H_2 = \begin{bmatrix}
+	1 & 0 \\
+	0 & H_2
+\end{bmatrix}$,则$H_2H_1A = \begin{bmatrix}
+	 1 & 1 & 1 \\
+	 0 & 5 & 2 \\
+	 0 & 0 & -1
+\end{bmatrix} = R$
+
+所以A的QR分解为
+
+$A = H_1H_2R = \begin{bmatrix}
+	0 & \frac{4}{5} &\frac{3}{5} \\
+	1 & 0 & 0 \\
+	0 & \frac{3}{5} & -\frac{4}{5}
+\end{bmatrix} \begin{bmatrix}
+	1 & 1 & 1 \\
+	0 & 5 & 2 \\
+	0 & 0 & -1
+\end{bmatrix}$
+
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 11 {P225 1(2), 2, 5 P233 1}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+\textbf{1(2) QUE}
+\bigskip
+
+求下列各矩阵的满秩分解。
+
+(2) $ \begin{bmatrix}
+	1 & -1 & 1 & 1 \\
+	-1 & 1 & -1 & -1 \\
+	-1 & -1 & 1 & 1 \\
+	1 & 1 & -1 & -1 
+\end{bmatrix}$
+
+
+\textbf{1(2) QUE}
+\bigskip
+
+对矩阵进行化简可得 
+
+$\begin{bmatrix}
+	1 & 0 & 0 & 0 \\
+	0 & 1 & -1 & -1 \\
+	& & & \\
+	& & & 
+\end{bmatrix}$
+
+所以其特征向量为$B = \begin{bmatrix}
+	1 & -1 \\
+	-1 & 1 \\
+	-1 & -1 \\
+	1 & 1
+\end{bmatrix}$
+
+另一个矩阵为$C =  \begin{bmatrix}
+	1 & 0 & 0 & 0 \\
+	0 & 1 & -1 & -1 
+\end{bmatrix}$
+
+所以 $A = BC$
+
+\textbf{2 QUE}
+\bigskip
+
+设$B = \in R_r^{m \times r}(r > 0)$,证明$B^TB$非奇异。
+
+\textbf{2 ANS}
+\bigskip
+
+要证明矩阵 $B^TB$ 是非奇异的，也就是满秩的，我们可以证明其零空间只包含零向量。
+
+假设存在一个非零向量 $\mathbf{v}$，使得 $B^TB\mathbf{v} = \mathbf{0}$。我们有：
+
+\[
+\begin{aligned}
+B^TB\mathbf{v} &= \mathbf{0} \\
+\Rightarrow \quad \mathbf{v}^TB^TB\mathbf{v} &= \mathbf{v}^T\mathbf{0} \\
+\Rightarrow \quad (\mathbf{v}^TB^T)(B\mathbf{v}) &= \mathbf{0}
+\end{aligned}
+\]
+
+由于 $\mathbf{v}^TB^T$ 和 $B\mathbf{v}$ 都是向量，可以将上式拆分为每个元素的乘积：
+
+\[
+(\mathbf{v}^TB^T)(B\mathbf{v}) = \begin{bmatrix} v_1 & v_2 & \ldots & v_r \end{bmatrix} \begin{bmatrix} \mathbf{b}_1 \\ \mathbf{b}_2 \\ \ldots \\ \mathbf{b}_r \end{bmatrix} = \mathbf{0}
+\]
+
+其中，$\mathbf{b}_i$ 是矩阵 $B$ 的列向量。由于乘积为零，我们得到 $v_1\mathbf{b}_1 + v_2\mathbf{b}_2 + \ldots + v_r\mathbf{b}_r = \mathbf{0}$。
+
+由于 $B$ 的列向量线性无关（因为 $B$ 的秩为 $r$），上述方程只有一个解即 $\mathbf{v} = \mathbf{0}$。这说明矩阵 $B^TB$ 的零空间只包含零向量，即 $B^TB$ 是非奇异的。
+
+因此，我们证明了 $B^TB$ 是非奇异的。
+
+
+\textbf{5 QUE}
+\bigskip
+
+证明 \[ rankA = rank(A^TA) = rank(AA^T)\]
+这里$A \in R_r^{m \times r}$.
+
+\textbf{5 ANS}
+\bigskip
+
+
+要证明 $\text{rank}(A) = \text{rank}(A^TA) = \text{rank}(AA^T)$，我们可以分两个方向进行证明：
+
+方向一：$\text{rank}(A) = \text{rank}(A^TA)$
+
+我们可以观察到 $A^TA$ 是一个对称矩阵，而对称矩阵的秩等于它的转置矩阵的秩。因此，$\text{rank}(A) = \text{rank}(A^TA)$ 成立。
+
+方向二：$\text{rank}(A) = \text{rank}(AA^T)$
+
+对于任意矩阵 $B$，有 $\text{rank}(B) = \text{rank}(B^T)$。因此，我们可以得到 $\text{rank}(A) = \text{rank}(A^T) = \text{rank}((A^T)^T) = \text{rank}(A^{TT}) = \text{rank}(A^TA)$。
+
+另一方面，注意到 $AA^T$ 的秩不会超过 $A$ 的秩，因为矩阵乘法保持秩的不增性。因此，我们有 $\text{rank}(AA^T) \leq \text{rank}(A)$。
+
+综合以上两个方向的证明，我们可以得出结论：$\text{rank}(A) = \text{rank}(A^TA) = \text{rank}(AA^T)$。
+
+\textbf{1 QUE}
+\bigskip
+
+设 $\sigma_1$ 和 $\sigma_n$ 是矩阵A的最大奇异值和最小奇异值。证明： $\sigma_1 = {\parallel A \parallel}_2$；
+当A是非奇异矩阵时，${\parallel A^{-1} \parallel}_2 = \frac{1}{\sigma_n}$
+
+
+\textbf{1 ANS}
+\bigskip
+
+根据定义，矩阵 $A$ 的2-范数（或称为谱范数）等于其最大奇异值，即 $\|A\|_2 = \sigma_1$。
+
+现在我们证明这个结论。根据奇异值分解，我们有：
+
+$$
+A = U\Sigma V^T
+$$
+
+其中 $U$ 和 $V$ 是正交矩阵，$\Sigma$ 是对角矩阵，对角线上的元素是矩阵 $A$ 的奇异值。
+
+
+接下来，我们证明当 $A$ 是非奇异矩阵时，$\|A^{-1}\|_2 = \frac{1}{\sigma_n}$。
+
+根据定义，矩阵的逆的2-范数等于其最大奇异值的倒数。即 $\|A^{-1}\|_2 = \frac{1}{\sigma_1}$。
+
+然而，对于非奇异矩阵 $A$，它的逆矩阵 $A^{-1}$ 的奇异值与 $A$ 的奇异值相反倒数。即 $\sigma_i(A^{-1}) = \frac{1}{\sigma_i(A)}$。
+
+因此，我们有 $\|A^{-1}\|_2 = \frac{1}{\sigma_1(A)} = \frac{1}{\sigma_n}$。
+
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 12 {P306 3, 4, 5}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+
+\textbf{3 QUE}
+\bigskip
+
+设I是n阶单位矩阵, J是所有元素均为1的n阶矩阵,记$A = (a - b) I + bJ$  
+证明：若$a + (n - 1)b = 0$, 则$X = (a - b)^{-1}I$是A的$\{-1\}-$逆
+
+\textbf{3 ANS}
+\bigskip
+
+$AXA = [(a - b) I + bJ](a - b)^{-1}A = A + b(a - b)^{-1}JA = A +(b - a)^{-1}[a + (n - 1)b]J = A$
+
+上式用到$J^2 = nJ$.
+
+\textbf{4 QUE}
+\bigskip
+
+已知
+
+\[  \begin{bmatrix}
+	0 & -a_3 & a_2 \\
+	a_3 & 0 & a_1 \\
+	-a_2 & a_1 & 0
+\end{bmatrix}\]
+证明: $X = -(a_1^{2} + a_2^{2} + a_3^{2})^{-1}A$是$A$的$\{-1\}-$逆
+
+
+\textbf{4 ANS}
+\bigskip
+
+经计算得$A^3 = -(a_1^2 + a_2^2 +a_3^2)A$,于是 
+
+$AXA = - (a_1^2 + a_2^2 +a_3^2)^{-1}A^3 = A$
+
+\textbf{5 QUE}
+\bigskip
+
+证明定理6.5之(2)~(5).
+
+
+\textbf{5 ANS}
+\bigskip
+
+
+(2) if $\lambda = 0,$ so $\lambda^{+}A^{(-1)} = O \in (\lambda A )\{1\}$, if $\lambda \notin 0,$ so $\lambda^{+}A^{(-1)}(\lambda A) = 
+(\lambda \lambda^{+}) = \lambda A$ so $\lambda^{+}A^{(-1)} \in (\lambda A)\{1\}$
+
+(3)$(SAT)(T^{-1}A^{(1)}S^{-1})(SAT) = SAA^{(1)}AT = SAT$
+
+so $T^{-1}A^{(-1)}S^{-1} \in (SAT)\{1\}$
+
+(4)$rankA = rank(AA^{(1)}A) \leq rank(A^{(1)})$
+
+(5) $(AA^{(1)})^2 = AA^{(1)}AA^{(1)} = AA^{(1)}$
+
+$(A^{(1)}A)^2 = A^{(1)}AA^{(1)}A = AA^{(1)}A$
+
+becase $rankA = rank(AA^{(1)}A) \leq rank(AA^{(1)}) \leq rankA$
+
+so $rankA(AA^{(1)}) = rankA$
+
+同理可证 $rank(A^{(1)}A) = rankA$
+
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 13 {P306-307 6, 8, 11, 12}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+\textbf{6 QUE}
+\bigskip
+
+证明定理6.10之(3)~(4).
+
+
+\textbf{6 ANS}
+\bigskip
+
+(3)对Penrose方程(1)-(4)取共轭转置，并由$(A^H)$的唯一性可知$(A^H)^{+} = (A^{+})^H$
+
+(4)令 $X = A^{+}(A^H)^{+}$,直接验证
+
+\[ (A^{H}A)X(A^{H}A) = A^{H}A, X (A^{H}A)X = X \]
+\[(A^{H}AX)^H = A^{H}AX, (XA^{H}A)^H = XA^{H}A \]
+
+
+由$(A^Ha^{+})$的唯一性即得$(A^HA)^{+} = X$
+
+
+\textbf{8 QUE}
+\bigskip
+
+证明$\begin{bmatrix}
+	A \\
+	O
+\end{bmatrix}^{+} = \begin{bmatrix}
+	A^{+} & \vdots & O
+\end{bmatrix}$
+
+
+\textbf{8 ANS}
+\bigskip
+
+
+首先，考虑左侧 $\begin{bmatrix} A \\ O \end{bmatrix}^+$。根据广义逆的定义，$\begin{bmatrix} A \\ O \end{bmatrix}^+$ 是满足以下两个条件的矩阵：
+
+1. $\begin{bmatrix} A \\ O \end{bmatrix} \begin{bmatrix} A \\ O \end{bmatrix}^+ \begin{bmatrix} A \\ O \end{bmatrix} = \begin{bmatrix} A \\ O \end{bmatrix}$
+2. $\begin{bmatrix} A \\ O \end{bmatrix}^+ \begin{bmatrix} A \\ O \end{bmatrix} \begin{bmatrix} A \\ O \end{bmatrix}^+ = \begin{bmatrix} A \\ O \end{bmatrix}^+$
+
+我们将使用这些条件来计算左侧。
+
+首先，计算 $\begin{bmatrix} A \\ O \end{bmatrix} \begin{bmatrix} A \\ O \end{bmatrix}^+$：
+
+$$\begin{bmatrix} A \\ O \end{bmatrix} \begin{bmatrix} A \\ O \end{bmatrix}^+ = \begin{bmatrix} A \\ O \end{bmatrix} \begin{bmatrix} A^+ & \vdots & O \end{bmatrix}$$
+
+根据矩阵乘法的定义，我们可以将其展开为：
+
+$$\begin{bmatrix} A A^+ & \vdots & A O \end{bmatrix}$$
+
+由于 $AA^+$ 和 $AO$ 的维度相同，我们可以将其写为：
+
+$$\begin{bmatrix} A A^+ \\ A O \end{bmatrix}$$
+
+接下来，我们计算 $\begin{bmatrix} A \\ O \end{bmatrix}^+ \begin{bmatrix} A \\ O \end{bmatrix}$
+
+$$\begin{bmatrix} A \\ O \end{bmatrix}^+ \begin{bmatrix} A \\ O \end{bmatrix} = \begin{bmatrix} A^+ & \vdots & O \end{bmatrix} \begin{bmatrix} A \\ O \end{bmatrix}$$
+
+展开为：
+
+$$\begin{bmatrix} A^+ A & \vdots & O O \end{bmatrix}$$
+
+由于 $A^+A$ 的维度为 $n \times n$，$OO$ 的维度为 $(n-m) \times (n-m)$，我们可以写为：
+
+$$\begin{bmatrix} A^+ A & \vdots & O \end{bmatrix}$$
+
+综上所述，我们得到：
+
+$$\begin{bmatrix} A \\ O \end{bmatrix} \begin{bmatrix} A \\ O \end{bmatrix}^+ = \begin{bmatrix} A A^+ \\ A O \end{bmatrix}$$
+
+$$\begin{bmatrix} A \\ O \end{bmatrix}^+ \begin{bmatrix} A \\ O \end{bmatrix} = \begin{bmatrix} A^+ A & \vdots & O \end{bmatrix}$$
+
+由于这两个结果分别等于 $\begin{bmatrix} A \\ O \end{bmatrix}$，因此我们可以得出结论：
+
+$$\begin{bmatrix} A \\ O \end{bmatrix}^+ = \begin{bmatrix} A^+ & \vdots & O \end{bmatrix}$$
+
+
+\textbf{11 QUE}
+\bigskip
+
+设$H$是幂等Hermite矩阵,证明$H^{+} = H$
+
+
+\textbf{11 ANS}
+\bigskip
+
+由$H^2 = H, H^H = H ===> H^3 = H, (H^2)^H = H^2,$ so $H^+ = h$
+
+
+\textbf{12 QUE}
+\bigskip
+
+证明:$H^{+} = H$的充要条件是$H^2$为幂等Hermite矩阵且$rank(H^2) = rank(H)$
+
+
+\textbf{12 ANS}
+\bigskip
+
+要证明 "$H^{+} = H$ 的充要条件是 $H^2$ 为幂等 Hermite 矩阵且 $rank(H^2) = rank(H)$"，我们需要证明两个方向：充分性和必要性。
+
+**充分性：** 假设 $H^{+} = H$，我们需要证明 $H^2$ 是幂等 Hermite 矩阵且 $rank(H^2) = rank(H)$。
+
+首先，考虑 $H^2$。由于 $H^{+} = H$，我们可以将 $H^2$ 表示为：
+
+$$H^2 = HH = (H^{+})H = H(H^{+}) = HH^{+}$$
+
+因此，$H^2$ 是幂等的，即 $H^2 = HH^{+}$。
+
+接下来，我们来证明 $H^2$ 是 Hermite 矩阵。由于 $H^{+} = H$，我们可以得到：
+
+$$(H^2)^{+} = (HH^{+})^{+} = (H(H^{+}))^{+} = (H^{+})^{+}H^{+} = HH^{+} = H^2$$
+
+因此，$H^2$ 是 Hermite 矩阵。
+
+最后，我们需要证明 $rank(H^2) = rank(H)$。由于 $H^2 = HH^{+}$，我们可以使用矩阵秩的性质得到：
+
+$$rank(H^2) = rank(HH^{+}) \leq \min(rank(H), rank(H^{+}))$$
+
+由于 $H^{+} = H$，我们有 $rank(H) = rank(H^{+})$。因此，$rank(H^2) \leq rank(H)$。
+
+另一方面，由于 $H^{+} = H$，我们可以将 $H$ 表示为 $H = H^{+}$。因此，$HH = HH^{+}$，意味着 $H^2 = HH^{+}$。
+
+根据矩阵秩的性质，我们有 $rank(H^2) \geq rank(H)$。
+
+综上所述，我们得出结论：当 $H^{+} = H$ 时，$H^2$ 是幂等 Hermite 矩阵且 $rank(H^2) = rank(H)$。
+
+**必要性：** 现在假设 $H^2$ 是幂等 Hermite 矩阵且 $rank(H^2) = rank(H)$，我们需要证明 $H^{+} = H$。
+
+由于 $H^2$ 是幂等的，我们有 $H^2 = HH = H$。
+
+考虑 $H^2$ 的特征值分解，我们可以得到 $H^2 = UDU^{+}$，其中 $U$ 是酉矩阵，$D$ 是对角矩阵。
+
+由于 $H^2 = H$，我们有 $UDU^{+} = H$，即 $H = UDU^{+}$。
+
+将 $H = UDU^{+}$ 代入到 $H^2 = H$ 中，我们可以得
+
+到：
+
+$$UDU^{+}UDU^{+} = UDU^{+}$$
+
+由于 $U$ 是酉矩阵，$U^{+}U = I$（其中 $I$ 是单位矩阵），我们可以简化上述等式为：
+
+$$UD^2U^{+} = UDU^{+}$$
+
+根据幂等矩阵的性质，我们知道 $D^2 = D$。因此，上述等式可以进一步简化为：
+
+$$UDU^{+} = UDU^{+}$$
+
+由于 $U$ 是酉矩阵，我们可以消去 $U^{+}$，得到 $DU = UD$。
+
+考虑到 $D$ 是对角矩阵，$U$ 是酉矩阵，我们可以得出结论：$D$ 的对角元素与 $U$ 的对应列是相等的。
+
+由于 $H = UDU^{+}$，我们可以将其表示为 $H = \sum_{i=1}^n d_i u_i u_i^{+}$，其中 $d_i$ 是 $D$ 的对角元素，$u_i$ 是 $U$ 的对应列。
+
+注意到 $\sum_{i=1}^n u_i u_i^{+}$ 是一个 Hermite 矩阵。
+
+由于 $H = \sum_{i=1}^n d_i u_i u_i^{+}$，我们可以得出结论：$H$ 是 Hermite 矩阵。
+
+另外，考虑到 $H^2 = H$，我们可以得到：
+
+$$H^2 = \left(\sum_{i=1}^n d_i u_i u_i^{+}\right)^2 = \sum_{i=1}^n d_i^2 u_i u_i^{+}$$
+
+由于 $H^2$ 是幂等的，我们有 $H^2 = \sum_{i=1}^n d_i^2 u_i u_i^{+}$。
+
+由于 $H^2 = HH = H = \sum_{i=1}^n d_i u_i u_i^{+}$，我们可以比较两个表达式的对应项，得到 $d_i^2 = d_i$。
+
+考虑到 $d_i^2 = d_i$，我们可以得出结论：对于 $H$ 的每个非零特征值 $d_i$，其平方等于本身，即 $d_i = 0$ 或 $d_i = 1$。
+
+由于 $H$ 是 Hermite 矩阵，其特征值必定是实数。因此，我们可以将 $H$ 的特征值分类为两类：0 和 1。
+
+现在考虑 $H$ 的广义逆 $H^{+}$。由于 $H$ 的特征值为 0 和 1，我们可以得出结论：$H$ 的广义逆 $H^{+}$ 的特征值也为 0 和 1。
+
+由于广义逆的定义，对于特征值为非零值的特征向量，其广义逆特征值的倒数等于原特征
+
+值的倒数。而对于特征值为 0 的特征向量，其广义逆特征值为 0。
+
+由于 $H$ 的特征值为 0 和 1，我们可以得出结论：$H^{+}$ 的特征值为 0 和 1。
+
+由于 $H^{+}$ 的特征值和 $H$ 的特征值相同，我们可以得出结论：$H$ 和 $H^{+}$ 共享相同的特征值。
+
+考虑到 Hermite 矩阵的特征值分解是唯一的，我们可以得出结论：$H$ 和 $H^{+}$ 具有相同的特征值分解。
+
+由于特征值分解唯一，我们可以得出结论：$H = H^{+}$，即 $H$ 是幂等 Hermite 矩阵且 $rank(H) = rank(H^2)$。
+
+综上所述，我们证明了必要性和充分性，从而证明了 "$H^{+} = H$ 的充要条件是 $H^2$ 为幂等 Hermite 矩阵且 $rank(H^2) = rank(H)$"。
+
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 14 {P295 1, 4}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+\textbf{1 QUE}
+\bigskip
+
+设L,M是$C_{}^{n}$的子空间，且$L \oplus M = C_{}^{n}$，证明投影算子$P_{L,M}$是线性算子
+
+
+\textbf{1 ANS}
+\bigskip
+
+为了证明投影算子$P_{L,M}$是线性算子，我们需要证明它满足两个性质：加法性和数乘性。
+
+首先，考虑向量空间$C^n$中的两个向量$\mathbf{v}$和$\mathbf{w}$，它们的投影分别为$P_{L,M}(\mathbf{v})$和$P_{L,M}(\mathbf{w})$。我们希望证明$P_{L,M}$是加法性的，即$P_{L,M}(\mathbf{v} + \mathbf{w}) = P_{L,M}(\mathbf{v}) + P_{L,M}(\mathbf{w})$。
+
+根据投影的定义，$P_{L,M}(\mathbf{v})$是$L$和$M$中与$\mathbf{v}$最接近的向量，而$P_{L,M}(\mathbf{w})$是$L$和$M$中与$\mathbf{w}$最接近的向量。因此，$P_{L,M}(\mathbf{v}) + P_{L,M}(\mathbf{w})$是$L$和$M$中与$\mathbf{v}$和$\mathbf{w}$最接近的向量之和。
+
+考虑向量$\mathbf{v} + \mathbf{w}$，它是$\mathbf{v}$和$\mathbf{w}$的和向量。根据直和分解$L \oplus M = C^n$的定义，我们知道$\mathbf{v} + \mathbf{w}$可以被唯一地表示为$\mathbf{v} + \mathbf{w} = \mathbf{v}' + \mathbf{w}'$，其中$\mathbf{v}' \in L$且$\mathbf{w}' \in M$。
+
+由于$P_{L,M}(\mathbf{v})$是$L$中与$\mathbf{v}$最接近的向量，而$P_{L,M}(\mathbf{w})$是$M$中与$\mathbf{w}$最接近的向量，根据投影的性质，我们知道$\mathbf{v}' = P_{L,M}(\mathbf{v})$且$\mathbf{w}' = P_{L,M}(\mathbf{w})$。
+
+因此，$P_{L,M}(\mathbf{v} + \mathbf{w}) = \mathbf{v}' + \mathbf{w}' = P_{L,M}(\mathbf{v}) + P_{L,M}(\mathbf{w})$，这证明了$P_{L,M}$是加法性的。
+
+接下来，我们证明$P_{L,M}$是数乘性的，即对于任意标量$a$和向量$\mathbf{v}$，有$P_{L,M}(a\mathbf{v}) = aP_{L,M}(\mathbf{v})$。
+
+考虑向量$a\mathbf{v}$，它是标量$a$和向量$\mathbf{v}$的乘积。根据直和分解$L \oplus M = C^n$的定义，我们知道$a\mathbf{v}$可以被唯一地表示为$a\mathbf{v} = a\mathbf{v}' + a\mathbf{w}'$，其中$\mathbf{v}' \in L$且$\mathbf{w}' \in M$。
+
+由于$P_{L,M}(\mathbf{v})$是$L$中与$\mathbf{v}$最接近的向量，而$P_{L,M}(\mathbf{w})$是$M$中与$\mathbf{w}$最接近的向量，根据投影的性质，我们知道$a\mathbf{v}' = aP_{L,M}(\mathbf{v})$且$a\mathbf{w}' = aP_{L,M}(\mathbf{w})$。
+
+因此，$P_{L,M}(a\mathbf{v}) = a\mathbf{v}' + a\mathbf{w}' = aP_{L,M}(\mathbf{v})$，这证明了$P_{L,M}$是数乘性的。
+
+综上所述，我们证明了投影算子$P_{L,M}$是线性算子。
+
+\textbf{4 QUE}
+\bigskip
+
+设 $P_1, P_2$均为投影矩阵，证明
+
+(1)$P = P_1 + P_2$是投影矩阵的充要条件是$P_1P_2 = P_2P_1 = O$
+
+(2)$P = P_1 - P_2$是投影矩阵的充要条件是$P_1P_2 = P_2P_1 = P_2$
+
+(3)若$P_1P_2 = P_2P_1$,则$P = P_1P_2$是投影矩阵
+
+\textbf{4 ANS}
+\bigskip
+
+(1) 首先证明必要性：假设 $P = P_1 + P_2$ 是投影矩阵，我们需要证明 $P_1P_2 = P_2P_1 = O$，其中 $O$ 是零矩阵。
+
+由投影矩阵的定义可知，$P_1^2 = P_1$ 和 $P_2^2 = P_2$。考虑 $P_1P_2$：
+
+$(P_1P_2)^2 = P_1P_2P_1P_2$
+
+由于 $P = P_1 + P_2$ 是投影矩阵，所以 $P^2 = (P_1 + P_2)^2 = P_1P_2 + P_2P_1 + P_1P_2 + P_2^2 = P_1P_2 + P_2P_1 + P_1P_2 + P_2$。
+
+另一方面，由于投影矩阵的性质，我们有 $P^2 = P$，即 $P_1P_2 + P_2P_1 + P_1P_2 + P_2 = P$。
+
+将这两个等式相减，得到：
+
+$P_1P_2 + P_2P_1 + P_1P_2 + P_2 - P_1P_2 - P_2P_1 - P_1P_2 - P_2 = P - P$
+
+化简得到：
+
+$P_1P_2 - P_1P_2 = O$
+
+即：
+
+$P_1P_2 = P_2P_1 = O$
+
+因此，必要性得证。
+
+接下来证明充分性：假设 $P_1P_2 = P_2P_1 = O$，我们需要证明 $P = P_1 + P_2$ 是投影矩阵。
+
+首先验证 $P^2 = P$：
+
+$P^2 = (P_1 + P_2)^2 = P_1^2 + P_1P_2 + P_2P_1 + P_2^2$
+
+由于 $P_1P_2 = P_2P_1 = O$，化简得到：
+
+$P^2 = P_1^2 + P_2^2 = P_1 + P_2$
+
+由于 $P_1$ 和 $P_2$ 都是投影矩阵，所以 $P_1^2 = P_1$ 和 $P_2^2 = P_2$，因此有：
+
+$P^2 = P$
+
+因此，$P = P_1 + P_2$ 是投影矩阵。
+
+综上所述，$P = P_1 + P_2$ 是投影矩阵的充要条件是 $P_1P_2 = P_2P_1 = O$。
+
+(2) 类似地，首先证明必要性：假设 $P = P_1 - P_2$ 是投影矩阵，我们需要证明 $P_1P_2 = P_2P_1 = P_2$
+
+。
+
+考虑 $P_1P_2$：
+
+$(P_1P_2)^2 = P_1P_2P_1P_2$
+
+由于 $P = P_1 - P_2$ 是投影矩阵，所以 $P^2 = (P_1 - P_2)^2 = P_1P_2 - P_2P_1 - P_1P_2 + P_2^2 = P_1P_2 - P_2P_1 + P_2P_1 - P_2$。
+
+另一方面，由于投影矩阵的性质，我们有 $P^2 = P$，即 $P_1P_2 - P_2P_1 + P_2P_1 - P_2 = P$。
+
+将这两个等式相减，得到：
+
+$P_1P_2 - P_1P_2 = O$
+
+即：
+
+$P_1P_2 = O$
+
+接下来验证 $P_2P_1 = P_2$：
+
+$P_2P_1 = P_2P_1 - P_1P_2 + P_1P_2 = P - P_1P_2 = P$
+
+因此，必要性得证。
+
+接下来证明充分性：假设 $P_1P_2 = P_2P_1 = P_2$，我们需要证明 $P = P_1 - P_2$ 是投影矩阵。
+
+首先验证 $P^2 = P$：
+
+$P^2 = (P_1 - P_2)^2 = P_1P_2 - P_2P_1 - P_1P_2 + P_2^2$
+
+由于 $P_1P_2 = P_2P_1 = P_2$，化简得到：
+
+$P^2 = P_2 - P_2 - P_2 + P_2^2 = P_2^2 - P_2 = P_2 - P_2 = O$
+
+因此，$P^2 = P$。
+
+综上所述，$P = P_1 - P_2$ 是投影矩阵的充要条件是 $P_1P_2 = P_2P_1 = P_2$。
+
+(3) 假设 $P_1P_2 = P_2P_1$，我们需要证明 $P = P_1P_2$ 是投影矩阵。
+
+首先验证 $P^2 = P$：
+
+$P^2 = (P_1P_2)^2 = P_1P_2P_1P_2$
+
+由于 $P_1P_2 = P_2P_1$，化简得到：
+
+$P^2 = P_1P_2P_2P_1 = P_1P_2^2P_1 = P_1P_2P_1 = P$
+
+因此，$P^2 = P$。
+
+综上所述，如果 $P_1P_2 = P_2P_1$，则 $P = P_1P_2$ 是投影矩阵。
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 15 {P332 2 3(1)(2)}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+\textbf{2 QUE}
+\bigskip
+
+非奇异矩阵A的Hermite标准形是什么?矩阵Q与A的关系如何？置 
+换矩阵P是什么矩阵?由式$X = P\begin{bmatrix}
+	I_r & O \\
+	O & L
+\end{bmatrix}Q$给出的$X$是什么？
+
+\textbf{2 ANS}
+\bigskip
+
+Hermite标准形是单位矩阵,$Q= A^{-1}, P = I, X = A^{-1}$
+
+
+\textbf{3(1)(2) QUE}
+\bigskip
+
+已知矩阵
+\[A = \begin{bmatrix}
+	1 & 0 & 0 & 1 \\
+	1 & 1 & 0 & 0 \\
+	0 & 1 & 1 & 0 \\
+	0 & 0 & 1 & 1 \\
+\end{bmatrix}\]
+
+(1) 求A的Hermite标准形，利用式(6.3.3)求A的$\{1\}-$逆和$\{1,2\}-$逆
+
+(2)构造A的满秩矩阵，利用定理6.15之(5)求$A^{+}$
+
+\textbf{3(1)(2) ANS}
+\bigskip
+
+(1) $QA = \begin{bmatrix}
+	1 & 0 & 0 & 1 \\
+	0 & 1 & 0 & -1 \\
+	0 & 0 & 1 & 0 \\
+	0 & 0 & 0 & 0 \\
+\end{bmatrix}, Q = \begin{bmatrix}
+	1 & 0 & 0 & 0 \\
+	-1 & 1 & 0 & 0 \\
+	1 & -1 & 1 & 0 \\
+	-1 & 1 & -1 & 1 \\
+\end{bmatrix}$
+
+so $A^{(1)} = \begin{bmatrix}
+	1 & 0 & 0 & 0 \\
+	-1 & 1 & 0 & 0 \\
+	1 & -1 & 1 & 0 \\
+	-a & a & -a & a \\
+\end{bmatrix}, A^{(1, 2)} = \begin{bmatrix}
+	1 & 0 & 0 & 0 \\
+	-1 & 1 & 0 & 0 \\
+	1 & -1 & 1 & 0 \\
+	0 & 0 & 0 & 0 \\
+\end{bmatrix}$
+
+
+(2)$A = FG - \begin{bmatrix}
+	1 & 0 & 0 \\
+	1 & 1 & 0 \\
+	0 & 1 & 1 \\
+	0 & 0 & 1 
+\end{bmatrix}\begin{bmatrix}
+	1 & 0 & 0 & 1 \\
+	0 & 1 & 0 & -1 \\
+	0 & 0 & 1 & 1
+\end{bmatrix}$
+
+$A^{+} = G^H(F^{H}AG^{H})^{-1}F^H = \frac{1}{8}\begin{bmatrix}
+	3 & 3 & -1 & -1 \\
+	-1 & 3 & 3 & -1 \\
+	-1 & -1 & 3 & 3 \\
+	3 & -1 & -1 & 3 
+\end{bmatrix}$
+
+
+%%%%%%%%%%%%%%%%%%%%
+\item \textit{HOMEWORK 16 {P343-344 1, 2, 5}}%%% 
+%%%%%%%%%%%%%%%%%%%%
+
+
+\textbf{1 QUE}
+\bigskip
+
+证明： 向量$x$是方程组$Ax = b$的最小二乘解的充要条件是，存在向量y，使得向量$\begin{bmatrix}
+	y \\
+	x
+\end{bmatrix}$为 $\begin{bmatrix}
+	I & A \\
+	A^H & O
+\end{bmatrix}\begin{bmatrix}
+	y \\
+	x
+\end{bmatrix} = \begin{bmatrix}
+	b \\
+	0
+\end{bmatrix}$的解
+
+\textbf{1 ANS}
+\bigskip
+
+令 $y = b - Ax$ 因为$x$是$Ax = b$的最小二乘解的充要条件是$x$满足$A^HAx = A^Hb$, so 
+
+$A^Hy = A^H(b - Ax) = A^{H}b - A^{H}Ax = 0$ 可见$\begin{bmatrix}
+	y \\
+	x
+\end{bmatrix}$满足所给方程，反之亦可推。
+
+
+\textbf{2 QUE}
+\bigskip
+
+设$A \in c_{}^{m \times n}$,列向量$b_1,b_2,\ldots,b_k \in C_{}^{m}$,证明：向量$x_0$使得
+$\min\limits_{x \in C_{}^{n}}\displaystyle{\sum_{i = 1}^{k} \parallel Ax - b_i \parallel^2}$
+成立的充要条件是，$x_0$是方程
+\[ Ax = \frac{1}{k} \displaystyle{\sum_{i = 1}^{k}b_i}\]的最小二乘解
+
+\textbf{2 ANS}
+\bigskip
+
+\[ x_0 \quad make \quad \displaystyle{\sum_{i = 1}^{k} \parallel Ax - b_i \parallel^2} \quad be \quad min \]
+\[ x_0\quad is \quad Ax = b_i(i = 1, 2, \ldots, k) \quad min \quad erchengjie\]
+\[ x_0 \quad is \quad \begin{bmatrix}
+	A \\
+	\ldots \\
+	A
+\end{bmatrix}x = \begin{bmatrix}
+	b_1 \\
+	\ldots \\
+	b_k
+\end{bmatrix} min \quad erchengjie\]
+\[ x_0 \quad is \ quad \begin{bmatrix}
+	A \\
+	\ldots \\
+	A
+\end{bmatrix}^H \begin{bmatrix}
+	A \\
+	\ldots \\
+	A
+\end{bmatrix}x = \begin{bmatrix}
+	A \\
+	\ldots \\
+	A
+\end{bmatrix}\begin{bmatrix}
+	b_1 \\
+	\ldots \\
+	b_k
+\end{bmatrix} solve,\]
+\[ x_0 is A^HAx = \frac{1}{k}\displaystyle{\sum_{i = 1}^{k}b_i} \quad solve\]
+\[ x_0 is Ax = \frac{1}{k}\displaystyle{\sum_{i = 1}^{k}b_i}\quad min \quad erchengjie\]
+
+\textbf{5 QUE}
+\bigskip
+
+设$A \in C_{}^{m \times n}, b \in C_{}^{n}, a \in C_{}^{n}$若方程组$Ax = b$相容，证明使得
+\[ \min\limits_{Ax = b}\parallel x - a \parallel\]成立的唯一解是
+\[x = A^{(1,4)}b + (I - A^{(1,4)}A)a\]其中包含所有二阶实反对称矩阵。
+其中， $A^{(1,4)} \in A\{1,4\}$
+
+\textbf{5 ANS}
+\bigskip
+
+becase $x - a = A^{(1,4)}(b - Aa)$
+
+so $x = A^{(1, 4)}(b - Aa) + a = A^{(1, 4)}b + (I - A^{(1,4)}A)a$
+
+\end{enumerate}
+
+\bigskip\bigskip
+\bigskip\bigskip
+
+
+
+设$C_{}^{2 \times 2}$中的线性变换$T$将二阶方阵变换为$TX = X \begin{bmatrix}
+	a & b \\
+	c & d
+\end{bmatrix}$,求$T$的矩阵
+
+\textbf{5 ANS}
+\bigskip
+
+要求线性变换$T$的矩阵，我们需要确定它在基向量上的作用。
+
+设$E_1=\begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}$，$E_2=\begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}$，$E_3=\begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix}$，$E_4=\begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix}$是$C_{}^{2 \times 2}$中的基向量。
+
+我们分别计算$T$作用在这四个基向量上的结果。
+
+对于$E_1$，有$TE_1=E_1\begin{bmatrix} a & b \\ c & d \end{bmatrix}=\begin{bmatrix} a & b \\ 0 & 0 \end{bmatrix}$。
+
+对于$E_2$，有$TE_2=E_2\begin{bmatrix} a & b \\ c & d \end{bmatrix}=\begin{bmatrix} 0 & 0 \\ a & b \end{bmatrix}$。
+
+对于$E_3$，有$TE_3=E_3\begin{bmatrix} a & b \\ c & d \end{bmatrix}=\begin{bmatrix} c & d \\ 0 & 0 \end{bmatrix}$。
+
+对于$E_4$，有$TE_4=E_4\begin{bmatrix} a & b \\ c & d \end{bmatrix}=\begin{bmatrix} 0 & 0 \\ c & d \end{bmatrix}$。
+
+将这四个结果组合起来，可以得到线性变换$T$的矩阵表示为：
+
+$$
+T = \begin{bmatrix}
+a & b & 0 & 0 \\
+0 & 0 & a & b \\
+c & d & 0 & 0 \\
+0 & 0 & c & d \\
+\end{bmatrix}
+$$
+
+其中，$a, b, c, d$为线性变换$T$的参数。
+
+\raggedright最后两章实在是找不到在哪了，最后找相近的也是不考的，所以不写了。
+
+\end{document}
+
